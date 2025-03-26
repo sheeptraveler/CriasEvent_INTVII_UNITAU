@@ -1,0 +1,118 @@
+\chapter{Introdução}
+\label{ch:intro}
+\section{Propósito}
+    O presente projeto pretende criar um site para gerenciamento de eventos chamado \textit{CriasEvent}, para que os organizaores possam criar e gerenciar eventos, enquanto que os participantes possam se inscrever nos mesmos.
+\section{Audiência}
+    O projeto se destina a organizadores de evento que querem uma plataforma para organizar e disponizar seus eventos, tanto presencias como onlines, e para os participantes que desejam se increver e participar de eventos, com o diferencial de poderem fazer incrições para diferentes eventos em uma mesma página.
+\section{Uso previsto}
+    Espera-se que o sistema seja usado por diferentes organizadores para criarem e listarem seus eventos para que os participantes possam acessar quais eventos estão disponíveis e se increverem nos mesmos.
+\section{Escopo}
+    O sistema irá fazer:
+    \begin{itemize}
+        \item Criação de eventos: preenchimento de informações, upload de imagens, deﬁnição de vagas, etc.
+        \item Gerenciamento de inscrições: conﬁrmação, lista de presença, envio de mensagens.
+        \item Acesso a relatórios de inscritos e participantes.
+        \item Criação e gerenciamento de galeria de fotos do evento.
+        \item Comunicação com participantes através do sistema.
+        \item Busca e ﬁltro de eventos por diversos critérios.
+        \item Inscrição em eventos.
+        \item Acesso a informações detalhadas dos eventos inscritos.
+        \item Participação na galeria de fotos do evento, com uploads e comentários.
+        \item Recebimento de notiﬁcações sobre eventos de interesse.
+    \end{itemize}
+\section{Definição de Risco}
+    O sucesso do projeto pode ser interrompido se um ou mais do seguintes fatores ocorrerem:
+    \begin{itemize}
+        \item Falha de atender aos requerimentos listados pela entidade superior.
+        \item Falha de se cumprir com o prazo de entrega determindado.
+        \item Incapacidade dos autores de implementarem as funcionalidades exigidas por conta de falta de conhecimento da utilização das ferramentas necessárias.
+    \end{itemize}
+
+
+\chapter{Descrição Geral}
+\label{Descrição Geral}
+
+\section{Classe de Usuários e suas características}
+\textit{CriasEvent} tem basicamente três camadas de uso:
+    \begin{itemize}
+        \item \textbf{Organizadores}: Criam e gerenciam eventos.
+        \item \textbf{Participantes}: Buscam, se inscrevem nos eventos disponíveis.
+        \item \textbf{Adiminstrador}: Controlam todo o conteúdo do site.
+    \end{itemize}
+
+\section{Necessidades de Usuários}
+	\textit{CriasEvent} pretende criar uma plataforma simples e sucinta, permitindo aos participantes visualizarem, se increverem em eventos. Note que o site não hospeda nenhum evento em si, apenas informações de inscrição e links relevantes de participação. Para os organizdores, \textit{CriasEvent} pretende ser uma plataforma onde os mesmos possam executar operações de CRUD de uma forma acessível e simples para poderem gerenciar seus eventos.
+
+\section{Ambiente de Operação}
+	O \textit{website CriasEvent} funcionará em qualquer navegador, logo  em qualquer sistema operacional com acesso a um navegador.
+
+\section{Restrições}
+	???
+\section{Suposições}
+	Todos os usuários têm acesso a um computador com um sistema operacional que possui um navegador para acesso a internet.
+\newpage
+
+
+
+
+\chapter{Requisitos}
+\label{Requisitos}
+
+\section{Requisitos Funcionais}
+
+\begin{tabular}{>{\raggedright}p{1.5cm}>{\raggedright}p{4cm}>{\raggedright}p{10cm}}
+\toprule
+\textbf{ID} & \textbf{Requirement} & \textbf{Description} \tabularnewline 
+\midrule
+RF-001 & CRUD do banco de dados dos eventos. & Utilizar mySQL para permitir criação, edição, exculsão, atualização dos eventos para os organizadores \tabularnewline \hline
+RF-002 & Criação da página Web & utilzar html, css e javascript para criar a página web onde os usuários poderam se cadastrar, se inscrever em eventos,  caso sejam participantes, e para os organizadores, permitir o uso das funções implementados no banco de dados pelo RF-001 \tabularnewline \hline
+RF-003 & Busca e filtro de eventos & permitir aos participantes realizar buscas no banco de dados por palavras-chave e filtrar eventos(e.g. por local, tipo de evento, artistas/palestrantes, período, etc) bem como não exibir eventos aos participantes que não podem se increver nos mesmos através condições de participação(e.g. ser maior de 18 anos). \tabularnewline \hline
+RF-004 & Descrição detalhada de cada evento & Para eventos presenciais, o sistema deve disponibilizar todas as informações necessárias para que os participantes possam comparecer ao evento. ara eventos on-line, o sistema deve disponibilizar os links de acesso ao evento por meio de comunicações enviadas aos inscritos. \tabularnewline \hline
+RF-005 & Criação de formulários de inscrição personalizados. & Cada evento precisa de um formulário de incrição, que não é o mesmo para todos. \tabularnewline \hline
+RF-006 & Gerenciamento de inscrições & Os organizadores precisam de informações sobre seus eventos, como conﬁrmação de inscrição, lista de presença etc. \tabularnewline
+\bottomrule
+\end{tabular}
+
+
+\section{Requisitos não funcionais}
+\begin{tabular}{>{\raggedright}p{1.5cm}>{\raggedright}p{4cm}>{\raggedright}p{10cm}}
+\toprule
+\textbf{ID} & \textbf{Requirement} & \textbf{Description} \tabularnewline 
+\midrule
+RNF-001 & Sistema de notificações & Organizadores poderão se comunicar com os inscritos por e-mail ou mensagens no sistema, participantes receberão notiﬁcações sobre novos eventos, alterações em eventos inscritos etc. \tabularnewline \hline
+RNF-002 & Perﬁs para organizadores e participantes. & Os perfis devem mostrar informações sobre seu usuário, como Histórico de eventos participados e/ou organizados. \tabularnewline \hline
+RNF-003 & Conﬁgurações de notiﬁcações e privacidade. & Permitir aos usuário configurar quando serem notificados e quais dados seram compartilhados \tabularnewline \hline
+RNF-004 & Sistema Multimidia & Os organizadores e participantes poderam fazer Upload de fotos e vídeos, promocionais ou não. \tabularnewline \hline 
+RNF-005 & Comentários sobre as fotos. & Permitir que os usuários se comuniquem através de comentário nas fotos e vídeos postados. \tabularnewline \hline 
+RNF-006 & Moderação de fotos e comentários. & Permitir aos adiminstradores de eventos realizarem moderação sobre os conteúdos postados baseados em suas \textit{guidelines} \tabularnewline \hline
+RNF-007 & Integração com Redes socias & Permitir o Compartilhamento de eventos nas redes sociais. \tabularnewline \hline
+RNF-008 & Visualização de eventos no maps. & Integrar a localização dos eventos ao google maps, mostrando seus locais.\tabularnewline
+
+\bottomrule
+\end{tabular}
+
+
+\begin{appendices}
+\chapter{Glossário}
+\begin{itemize}
+ \item CriasEvent: Nome do sistema de gerenciamento de eventos que está sendo desenvolvido. O objetivo principal é permitir que organizadores criem e gerenciem eventos e que participantes possam se inscrever neles
+
+\item Organizadores: Classe de usuários do CriasEvent que têm a capacidade de criar e gerenciar eventos na plataforma Eles podem executar operações de CRUD (criar, ler, atualizar e excluir) nos dados dos eventos.
+
+\item Participantes: Classe de usuários do CriasEvent que podem buscar e se inscrever nos eventos disponíveis.
+
+\item Administrador: Classe de usuários do CriasEvent que têm controle sobre todo o conteúdo do site.
+
+\item Evento: Uma ocorrência, tanto presencial quanto online, que pode ser criada e gerenciada por organizadores através do sistema CriasEvent. O sistema permite o preenchimento de informações, upload de imagens e definição de vagas para eventos.
+
+\item Inscrição: O processo pelo qual os participantes demonstram interesse em participar de um evento através do sistema CriasEvent . O sistema também oferece gerenciamento de inscrições, incluindo confirmação e lista de presença 
+
+\item CRUD: Acrônimo para as operações fundamentais de Criar, Read (Ler), Update (Atualizar) e Delete (Excluir) dados no banco de dados. No contexto do CriasEvent, os organizadores utilizarão essas operações para gerenciar os eventos . O banco de dados para essas operações será o MySQL.
+
+\item Requisitos Funcionais: Descrevem as funcionalidades que o sistema CriasEvent deverá implementar, ou seja, o que o sistema deverá ser capaz de fazer. Exemplos incluem o CRUD de eventos, a criação da página web, a busca e filtro de eventos e o gerenciamento de inscrições.
+
+\item Requisitos Não Funcionais: Descrevem as qualidades ou restrições do sistema CriasEvent, como desempenho, usabilidade, segurança, etc. Exemplos incluem o sistema de notificações, perfis para organizadores e participantes e a integração com redes sociais.
+\end{itemize}
+\end{appendices}
+
+
