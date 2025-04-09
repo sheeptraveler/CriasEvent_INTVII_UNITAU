@@ -3,62 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CriasEvent</title>
     <link rel="stylesheet" href="css/styles.css">
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="logo">CriasEvent</div>
         <input type="text" class="search-bar" placeholder="Pesquisar">
-        <nav class="" styles=" ">
-            
+        <nav>
             <a href="#">Home</a>
             <a href="#">Eventos</a>
             <a href="#">Mídia</a>
-            <a href="#" >Sobre</a>
-
-        
-            
-      
+            <a href="#">Sobre</a>
         </nav>
-        <button class="btn-cadastro">Cadastro</button>
-            <button id="toggle-mode">🌙</button>
+        <a href="cadastro.html" class="btn-cadastro">Cadastro</a>
+        <button id="toggle-mode">🌙</button>
     </header>
 
+    <!-- Banner Rotativo -->
     <section class="banner">
-        
-        <h1></h1>
+        <div class="slides">
+            <div class="slide active" style="background-image: url('imagens/banner3.jpg');"></div>
+            <div class="slide" style="background-image: url('imagens/banner2.jpg');"></div>
+        </div>
+        <div class="banner-overlay"></div>
+        <div class="banner-content">
+            <h1>Os melhores eventos de Taubaté</h1>
+            <p>Encontre experiências incríveis para curtir</p>
+        </div>
+        <div class="banner-controls">
+            <button class="banner-prev">❮</button>
+            <button class="banner-next">❯</button>
+        </div>
     </section>
 
+    <!-- Modal de Cadastro -->
+    <div id="cadastroModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Cadastro</h2>
+            <form id="formCadastro">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" placeholder="Digite seu nome" required>
+
+                <label for="sobrenome">Sobrenome</label>
+                <input type="text" id="sobrenome" placeholder="Digite seu sobrenome" required>
+
+                <label for="dataNascimento">Data de Nascimento</label>
+                <input type="date" id="dataNascimento" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Digite seu email" required>
+
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="Digite sua senha" required>
+
+                <button type="submit" class="btn-submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Seção de Eventos -->
     <section class="eventos">
-        <div class="evento">
-            <img src="../Imagens/show.jpg" alt="Show Felipe e Ryan">
-            <p>Show Felipe e Ryan</p>
-            <p>• Multiplas datas</p>
-            <p>COMPRAR</p>
+        <!-- Card 1 - Show Felipe e Ryan -->
+        <div class="card zoo-style">
+            <div class="top-bar">Show Musical</div>
+            <div class="image-container">
+                <img src="imagens/show.jpg" alt="Show Felipe e Ryan">
+            </div>
+            <div class="content">
+                <div class="evento-subtitulo">REDESCUBRA</div>
+                <div class="title">FELIPE & RYAN</div>
+                <div class="dates">Múltiplas datas</div>
+                <a href="#" class="buy-button">Comprar</a>
+            </div>
         </div>
-        <div class="evento">
-            <img src="../Imagens/comedia.jpg" alt="Comédia Wesley Santos">
-            <p>Comédia Wesley Santos</p>
-            <p>• Multiplas datas</p>
-            <p>COMPRAR</p>
+
+        <!-- Card 2 - Comédia Wesley Santos -->
+        <div class="card zoo-style">
+            <div class="top-bar">Stand-up Comedy</div>
+            <div class="image-container">
+                <img src="imagens/comedia.jpg" alt="Comédia Wesley Santos">
+            </div>
+            <div class="content">
+                <div class="evento-subtitulo">RIBA MUITO</div>
+                <div class="title">WESLEY SANTOS</div>
+                <div class="dates">Múltiplas datas</div>
+                <a href="#" class="buy-button">Comprar</a>
+            </div>
         </div>
-        <div class="evento">
-            <img src="../Imagens/carros.jpg" alt="Encontro de carros">
-            <p>Encontro de carros</p>
-            <p>• Multiplas datas</p>
-            <p>• COMPRAR</p>
+
+        <!-- Card 3 - Encontro de Carros -->
+        <div class="card zoo-style">
+            <div class="top-bar">Automotivo</div>
+            <div class="image-container">
+                <img src="imagens/carros.jpg" alt="Encontro de Carros">
+            </div>
+            <div class="content">
+                <div class="evento-subtitulo">ENCONTRO DE</div>
+                <div class="title">CARROS ESPORTIVOS</div>
+                <div class="dates">Múltiplas datas</div>
+                <a href="#" class="buy-button">Comprar</a>
+            </div>
         </div>
-        
     </section>
 
     <footer>
-        <a href="#"><img src="../Imagens/insta.png" alt="Instagram"></a>
-        <a href="#"><img src="../Imagens/zap.png" alt="WhatsApp"></a>
+        <div class="social-icons">
+            <a href="#"><img src="imagens/insta.png" alt="Instagram"></a>
+            <a href="#"><img src="imagens/zap.png" alt="WhatsApp"></a>
+        </div>
+        <div class="copyright">
+            © 2025 CriasEvent - Todos os direitos reservados
+        </div>
     </footer>
-    <script src="../JavaScript/script.js"></script>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

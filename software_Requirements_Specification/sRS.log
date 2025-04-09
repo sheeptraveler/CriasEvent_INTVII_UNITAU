@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.26)  26 MAR 2025 15:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.26)  31 MAR 2025 15:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -232,9 +232,11 @@ Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
 Package: sets 
 \c@s@tlength=\count292
 )
-File sRS.hst not found.
+Reading file sRS.hst...
+(./sRS.hst)
 \vh@verfile=\write3
-) (/usr/local/texlive/2025/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+)
+(/usr/local/texlive/2025/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
 Package tocbibind Info: The document has chapter divisions on input line 50.
 
@@ -1192,10 +1194,30 @@ al/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]
 \tf@toc=\write5
 \openout5 = `sRS.toc'.
 
-
+ (./base/history.tex
 
 Package babel Info: 'portuguese' activates 'portuges' shorthands.
-(babel)             Reported  on input line 126.
+(babel)             Reported  on input line 3.
+[1
+
+]
+\openout3 = `sRS.ver'.
+
+\vh@hstfile=\write6
+\openout6 = `sRS.hst'.
+
+ (./sRS.ver) (./sRS.ver) (./sRS.ver
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+[]|\T1/cmr/m/n/10 C. San-tos, M.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+\T1/cmr/m/n/10 Hashi-moto, M.
+ []
+
+))
+
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
@@ -1250,13 +1272,13 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `sRS.out' has not changed.
-(rerunfilecheck)             Checksum: 03E605BED45A664D117C6E999203D60D;2275.
+(rerunfilecheck)             Checksum: 85FBE3DCB9960F3463431F1FC63E9EC8;2403.
  ) 
 Here is how much of TeX's memory you used:
- 26982 strings out of 473190
- 474732 string characters out of 5715806
- 1140687 words of memory out of 5000000
- 49747 multiletter control sequences out of 15000+600000
+ 27013 strings out of 473190
+ 475208 string characters out of 5715806
+ 1140749 words of memory out of 5000000
+ 49762 multiletter control sequences out of 15000+600000
  574520 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,8n,79p,2541b,603s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1271,10 +1293,10 @@ texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/te
 xlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texl
 ive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texliv
 e/2025/texmf-dist/fonts/type1/public/cm-super/sfti1728.pfb>
-Output written on sRS.pdf (9 pages, 213552 bytes).
+Output written on sRS.pdf (10 pages, 219472 bytes).
 PDF statistics:
- 199 PDF objects out of 1000 (max. 8388607)
- 163 compressed objects within 2 object streams
- 27 named destinations out of 1000 (max. 500000)
- 137 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 209 PDF objects out of 1000 (max. 8388607)
+ 172 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
+ 145 words of extra memory for PDF output out of 10000 (max. 10000000)
 

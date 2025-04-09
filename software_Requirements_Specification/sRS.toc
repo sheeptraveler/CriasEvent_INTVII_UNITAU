@@ -1,4 +1,5 @@
 \babel@toc {portuguese}{}\relax 
+\contentsline {chapter}{Revision History}{1}{chapter*.2}%
 \contentsline {chapter}{\numberline {1}Introdução}{2}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Propósito}{2}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Audiência}{2}{section.1.2}%
@@ -14,5 +15,5 @@
 \contentsline {chapter}{\numberline {3}Requisitos}{5}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Requisitos Funcionais}{5}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Requisitos não funcionais}{6}{section.3.2}%
-\contentsline {chapter}{Appendices}{7}{section*.2}%
+\contentsline {chapter}{Appendices}{7}{section*.3}%
 \contentsline {chapter}{\numberline {A}Glossário}{8}{appendix.1.A}%

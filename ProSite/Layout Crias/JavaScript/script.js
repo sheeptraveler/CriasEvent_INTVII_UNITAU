@@ -1,15 +1,23 @@
 const toggleButton = document.getElementById('toggle-mode');
+const htmlElement = document.documentElement; // Melhor alternar no html
+
 toggleButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-
-    if (document.body.classList.contains('dark-mode')) {
-        toggleButton.textContent = "☀️";
-    } else {
-        toggleButton.textContent = "🌙";
-    }
+    htmlElement.classList.toggle('dark-mode');
+    
+    // Salva a preferência no localStorage
+    const isDarkMode = htmlElement.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDarkMode);
+    
+    // Atualiza o ícone
+    toggleButton.textContent = isDarkMode ? "☀️" : "🌙";
 });
 
-// Simula ação de cadastro
-document.querySelector('.btn-cadastro').addEventListener('click', () => {
-    alert('Página de cadastro em desenvolvimento!');
-});
+// Verifica preferência salva ao carregar a página
+if (localStorage.getItem('darkMode') === 'true') {
+    htmlElement.classList.add('dark-mode');
+    toggleButton.textContent = "☀️";
+} else {
+    toggleButton.textContent = "🌙";
+
+};
+
