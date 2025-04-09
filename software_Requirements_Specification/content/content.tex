@@ -12,14 +12,6 @@
   Para organizadores, o site será utilizado para gerenciamento dos eventos, onde os mesmos poderão ser criados, deletados e atualizados pelo organizador, bem como disponibilizados e customizados na página de eventos
 
 
-\section{Definição de Risco}
-    O sucesso do projeto pode ser interrompido se um ou mais do seguintes fatores ocorrerem:
-    \begin{itemize}
-        \item Falha de atender aos requerimentos listados pela entidade superior.
-        \item Falha de se cumprir com o prazo de entrega determindado.
-        \item Incapacidade dos autores de implementarem as funcionalidades exigidas por conta de falta de conhecimento da utilização das ferramentas necessárias.
-    \end{itemize}
-
 
 \chapter{Descrição Geral}
 \label{Descrição Geral}
@@ -42,20 +34,32 @@
       \item Inscrição em eventos.
       \item Acesso às informações detalhadas dos eventos inscritos: data de ocorrência, local, requisitos, etc.
     \end{itemize}
+
 \section{Necessidades de Usuários}
 	\textit{CriasEvent} pretende criar uma plataforma simples e sucinta, permitindo aos participantes visualizarem, se increverem em eventos. Note que o site não hospeda nenhum evento em si, apenas informações de inscrição e links relevantes de participação. Para os organizdores, \textit{CriasEvent} pretende ser uma plataforma onde os mesmos possam executar operações de CRUD de uma forma acessível e simples para poderem gerenciar seus eventos.
 
 \section{Ambiente de Operação}
 	O \textit{website CriasEvent} funcionará em qualquer navegador, logo  em qualquer sistema operacional com acesso a um navegador.
 
+\begin{tabular}{>{\raggedright}p{1.5cm}>{\raggedright}p{4cm}>{\raggedright}p{6cm}>{\raggedright}p{4cm}}
+\toprule
+  \textbf{N°} & \textbf{Módulo} & \textbf{Descrição} & \textbf{Tecnologias usadas} \tabularnewline 
+\midrule
+  1 & Página Web & Onde os usuários terão acesso as funcionalidades do escopo. & HTML/CSS/javascript\tabularnewline \hline
+  2 & Banco de Dados & Onde serão armazenados todas as informações(Usuários Cadastrados, Eventos, etc) & MySQL\tabularnewline \hline
+  3 & BackEnd & Permitirá a comunicação de 2 com 1 & Python(Flask)\tabularnewline
+\bottomrule
+\end{tabular}
+
 \section{Restrições}
-	???
-\section{Suposições}
-	Todos os usuários têm acesso a um computador com um sistema operacional que possui um navegador para acesso a internet.
+    O sucesso do projeto pode ser interrompido se um ou mais do seguintes fatores ocorrerem:
+    \begin{itemize}
+        \item Falha de atender aos requerimentos listados pela entidade superior.
+        \item Falha de se cumprir com o prazo de entrega determindado.
+        \item Incapacidade dos autores de implementarem as funcionalidades exigidas por conta de falta de conhecimento da utilização das ferramentas necessárias.
+    \end{itemize}
+
 \newpage
-
-
-
 
 \chapter{Requisitos}
 \label{Requisitos}
@@ -93,6 +97,7 @@ RNF-008 & Visualização de eventos no maps. & Integrar a localização dos even
 \bottomrule
 \end{tabular}
 
+\section{Definição de Risco}
 
 \begin{appendices}
 \chapter{Glossário}
