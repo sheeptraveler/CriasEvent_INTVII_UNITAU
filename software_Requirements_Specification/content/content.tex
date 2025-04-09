@@ -1,75 +1,206 @@
 \chapter{Introdução}
 \label{ch:intro}
 \section{Propósito}
-    O presente projeto pretende criar um site para gerenciamento de eventos chamado \textit{CriasEvent}, para que os organizaores possam criar e gerenciar eventos, enquanto que os participantes possam se inscrever nos mesmos.
+    O presente projeto pretende criar um site para gerenciamento de eventos chamado \textit{CriasEvent}, para que os organizadores possam criar e gerenciar eventos, enquanto os participantes possam se inscrever nos mesmos.
 \section{Audiência}
-    O projeto se destina a organizadores de evento que querem uma plataforma para organizar e disponizar seus eventos, tanto presencias como onlines, e para os participantes que desejam se increver e participar de eventos, com o diferencial de poderem fazer incrições para diferentes eventos em uma mesma página.
+    O projeto se destina a organizadores de evento que querem uma plataforma para organizar e disponibilizar seus eventos, tanto presencias como onlines, e para os participantes que desejam se inscrever e participar de eventos, com o diferencial de poderem fazer inscrições para diferentes eventos em uma mesma página.
 \section{Uso previsto}
-    Espera-se que o sistema seja usado por diferentes organizadores para criarem e listarem seus eventos para que os participantes possam acessar quais eventos estão disponíveis e se increverem nos mesmos.
-\section{Escopo}
-    O sistema irá fazer:
-    \begin{itemize}
-        \item Criação de eventos: preenchimento de informações, upload de imagens, deﬁnição de vagas, etc.
-        \item Gerenciamento de inscrições: conﬁrmação, lista de presença, envio de mensagens.
-        \item Acesso a relatórios de inscritos e participantes.
-        \item Criação e gerenciamento de galeria de fotos do evento.
-        \item Comunicação com participantes através do sistema.
-        \item Busca e ﬁltro de eventos por diversos critérios.
-        \item Inscrição em eventos.
-        \item Acesso a informações detalhadas dos eventos inscritos.
-        \item Participação na galeria de fotos do evento, com uploads e comentários.
-        \item Recebimento de notiﬁcações sobre eventos de interesse.
-    \end{itemize}
-\section{Definição de Risco}
-    O sucesso do projeto pode ser interrompido se um ou mais do seguintes fatores ocorrerem:
-    \begin{itemize}
-        \item Falha de atender aos requerimentos listados pela entidade superior.
-        \item Falha de se cumprir com o prazo de entrega determindado.
-        \item Incapacidade dos autores de implementarem as funcionalidades exigidas por conta de falta de conhecimento da utilização das ferramentas necessárias.
-    \end{itemize}
+  Espera-se que o site \textit{CriasEvent} seja acessado por usuários cadastrados, que podem ser tanto organizadores quanto participantes. 
+
+  Para participatnes, o site será uma plataforma de inscrição e de consulta, onde o usuário Participante poderá ver quais eventos estão sendo divulgados, e se desejar, se increver nos mesmos, bem como consultar quais eventos já está inscrito. 
+
+  Para organizadores, o site será utilizado para gerenciamento dos eventos, onde os mesmos poderão ser criados, deletados e atualizados pelo organizador, bem como disponibilizados e customizados na página de eventos
+
 
 
 \chapter{Descrição Geral}
 \label{Descrição Geral}
 
 \section{Classe de Usuários e suas características}
-\textit{CriasEvent} tem basicamente três camadas de uso:
+\textit{CriasEvent} tem basicamente três classes de uso:
     \begin{itemize}
-        \item \textbf{Organizadores}: Criam e gerenciam eventos.
-        \item \textbf{Participantes}: Buscam, se inscrevem nos eventos disponíveis.
-        \item \textbf{Adiminstrador}: Controlam todo o conteúdo do site.
+        \item \textbf{Organizadores}: Criam e gerenciam seus eventos.
+        \item \textbf{Participantes}: Acessam, Buscam e se inscrevem nos eventos disponíveis.
+        \item \textbf{Administrador}: Controlam todo o conteúdo do site(Frontend e Backend).
     \end{itemize}
 
-\section{Necessidades de Usuários}
-	\textit{CriasEvent} pretende criar uma plataforma simples e sucinta, permitindo aos participantes visualizarem, se increverem em eventos. Note que o site não hospeda nenhum evento em si, apenas informações de inscrição e links relevantes de participação. Para os organizdores, \textit{CriasEvent} pretende ser uma plataforma onde os mesmos possam executar operações de CRUD de uma forma acessível e simples para poderem gerenciar seus eventos.
+\section{Escopo}
+    \textit{CriasEvent} será capaz de:
+    \begin{itemize}
+      \item Exibição em Interface Web: todos os eventos serão exibidos através de uma página web. 
+      \item Gerenciamento de eventos: CRUD dos eventos: Criação, Consulta, Atualização e Remoção de eventos.
+      \item Gerenciamento de inscrições: Para participantes haverá Conﬁrmação(testar se o participante pode se inscrever no evento), e para Organizadores haverá acesso a relatórios de inscritos e participantes.
+      \item Busca e ﬁltro de eventos: Participantes poderão buscar por eventos baseados em palavras-chave.
+      \item Inscrição em eventos.
+      \item Acesso às informações detalhadas dos eventos inscritos: data de ocorrência, local, requisitos, etc.
+    \end{itemize}
 
 \section{Ambiente de Operação}
 	O \textit{website CriasEvent} funcionará em qualquer navegador, logo  em qualquer sistema operacional com acesso a um navegador.
 
-\section{Restrições}
-	???
-\section{Suposições}
-	Todos os usuários têm acesso a um computador com um sistema operacional que possui um navegador para acesso a internet.
+\begin{tabular}{>{\raggedright}p{1.5cm}>{\raggedright}p{4cm}>{\raggedright}p{6cm}>{\raggedright}p{4cm}}
+\toprule
+  \textbf{N°} & \textbf{Módulo} & \textbf{Descrição} & \textbf{Tecnologias usadas} \tabularnewline 
+\midrule
+  1 & Página Web & Onde os usuários terão acesso as funcionalidades do escopo. & HTML/CSS/javascript\tabularnewline \hline
+  2 & Banco de Dados & Onde serão armazenados todas as informações(Usuários Cadastrados, Eventos, etc) & MySQL\tabularnewline \hline
+  3 & BackEnd & Permitirá a comunicação de 2 com 1 & Python(Flask)\tabularnewline
+\bottomrule
+\end{tabular}
+
 \newpage
 
+\chapter{Necessidades de Usuários}
+\section{Casos de Uso}
+\textit{CriasEvent} pretende criar uma plataforma simples e sucinta, permitindo aos participantes visualizarem, se increverem em eventos. Note que o site não hospeda nenhum evento em si, apenas informações de inscrição e links relevantes de participação. Para os organizdores, \textit{CriasEvent} pretende ser uma plataforma onde os mesmos possam executar operações de CRUD de uma forma acessível e simples para poderem gerenciar seus eventos.
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.6\textwidth]{images/user_case}
+  \caption{Diagrama de Casos de Usos}
+  \label{fig:diagram_user_case}
+\end{figure}
+
+\section{Diagrama ER}
+\textit{CriasEvent} irá tratar uma entidade usuario que pode vir a ter 3 cargos:
+\begin{itemize}
+    \item Cliente
+    \item Organizador
+    \item Administrador
+\end{itemize}
+\textit{CriasEvent} com base no "Ranking" deste usuario ele terá acesso a funcionalidades espeficicas de edição geral. \par
+A imagem a seguir demonstra um Diagrama de Entidade Relacionamento, para um entendimento base dos relacionamentos entre as atividades fornecidas ao Usuario.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{images/diagrama_ER.png}
+  \caption{Diagrama de Entidade Relacionamento}
+  \label{fig:diagram_Entity_Relatioship}
+\end{figure}
+
+\section{Tabela Usuario}
+A tabela usuario é fundamental para o estabelecimento das pessoas as quais usaram o \textit{CriasEvent}. Há 3 possibilidades distintas de usuarios sendo estes os previamente dito:
+\begin{itemize}
+    \item Cliente
+    \item Organizador
+    \item Administrador
+\end{itemize}
+Cliente é o usuario padrao do site, ao qual consumira os eventos gratuitos, Organizador de eventos será responsavel por criar o evento, edita-lo e monitorar seu acontecimento e o Administrador do site ficará responsavel por manter a ordem no site, tendo todas permissoes.
+Comentarios breves a respeito de suas variaveis:
+\begin{itemize}
+    \item Id : Chave primaria para indentificar o Usuario, sendo esta chave UNICA.
+    \item nome : Nome do usuario.
+    \item email : Email do Usuario.
+    \item dataNascimento : Data de nascimento do usuario.
+    \item senha : senha do Usuario
+    \item tipo : Previamente mencionado, os tipos de usuario possiveis (Cliente, Organizador ou Administrador).
+\end{itemize}
+
+\section{Tabela Evento}
+\textit{CriasEvent} fornece a possibilidade para o usuario Cliente se inscrever a um evento, para tal atividade sera necessario informacoes fundamentais no processo de criacao do evento aos quais sao armazenados na tabela Evento.
+
+\begin{itemize}
+    \item idEvento : Chave primaria para indentificacao do evento.
+    \item nomeEvento : Nome inserido pelo organizador do evento.
+    \item orgId : Chave estrangeira para identificacao do Organizador de eventos, utilizando seu Id armazenado.
+    \item descricao : Organizador de evento pode descrever o evento nesta área.
+    \item dataEvento : Data quando ocorrera o evento.
+    \item local : Local onde ocorrera o evento.
+    \item status : 3 Possibilidades distintas em que se pode encontrar o evento, sendo Ativo, Cancelado ou Removido.
+\end{itemize}
+
+\section{Tabela Participacao}
+Tabela com foco em armazenar os Clientes e os eventos aos quais estes participam.
+\begin{itemize}
+    \item Id : chave para propria participacao.
+    \item UsuarioId : Anexa o Id do usuario para agrupamento de usuario e evento.
+    \item EventoId : Anexa o Id do usuario para agrupamento de evento e usuario.
+\end{itemize}
+
+\section{Comentario}
+Tabela para obter os comentarios relacionados ao evento em questao, além de anexa-los ao usuarios que os fizeram.
+
+\begin{itemize}
+    \item Id : Chave primaria de cada comentario realizado.
+    \item UsuarioId : Chave estrangeira para identificacao de usuario que comentou no evento
+    \item eventoId : Chave estrangeira para identificacao do evento ao qual foi realizado o comentario sobre.
+    \item texto : Comentario realizado.
+    \item dataComentario : Data qual comentario foi realizado.
+\end{itemize}
+
+\section{ImagemEvento}
+Imagem aderida ao evento, esta inclusao é feita tanto pelo usuario, para postar sobre o evento ocorrido, ou até mesmo para promover o evento pelo organizador.
+
+\begin{itemize}
+    \item id : chave primaria para identificacao da imagem.
+    \item eventoId : chave estrangeira para identificacao do evento.
+    \item usuarioId : chave estrangeira para identificao do usuario ao qual realizou a postagem.
+    \item urlImagem : Endereco da imagem postada.
+    \item legenda : Breve descricao para imagem postada.
+\end{itemize}
+
+\section{Explicacao dos Relacionamentos}
+\begin{tabular}{>{\raggedright}p{1.5cm}>{\raggedright}p{4cm}>{\raggedright}p{4cm}>{\raggedright}p{6cm}}
+\toprule
+  \textbf{ID} & \textbf{Relacionamento FK} &\textbf{Relacionamento PK} & \textbf{Descrição}  \tabularnewline 
+\midrule
+  1 & Participacao(usuarioId) & Usuario(id) & Obtencao do id na tabela de usuario para marcar sua presenca no evento. 
+  \tabularnewline \hline
+  2 & Participacao(EventoId) & Evento(idEvento) & Variavel importante para anexar a presenca do usuario ao evento respectivo da sua participacao
+  \tabularnewline \hline
+  3 & Evento(orgId) & Usuario(Id) & Para criacao do evento precisa-se de um Organizador de eventos para tal ato, id deste Organizador armazenado. \tabularnewline \hline
+  4 & Comentario(usuarioId)& Usuario(Id) & Vincula o comentario armazenado ao Usuario que o fez. 
+  \tabularnewline \hline
+  5 & Comentario(eventoId) & Evento(idEvento) & Comentario sera anexado na pagina a um evento respectivo, para isso vincula-o ao EventoId. \tabularnewline \hline
+  6 & ImagemEvento(usuarioId) & Usuario(Id) & Para postagem da foto, vincula o usuario a imagem por meio do Id. 
+  \tabularnewline \hline
+  7 & ImagemEvento(EventoId) & Evento(EventoId) & Anexa a imagem ao evento com auxilio do ID de evento.
+  \tabularnewline \hline
+\bottomrule
+\end{tabular}
 
 
 \chapter{Requisitos}
 \label{Requisitos}
 
-\section{Requisitos Funcionais}
+\section{Requisitos Funcionais Página Web}
 
 \begin{tabular}{>{\raggedright}p{1.5cm}>{\raggedright}p{4cm}>{\raggedright}p{10cm}}
 \toprule
 \textbf{ID} & \textbf{Requirement} & \textbf{Description} \tabularnewline 
 \midrule
-RF-001 & CRUD do banco de dados dos eventos. & Utilizar mySQL para permitir criação, edição, exculsão, atualização dos eventos para os organizadores \tabularnewline \hline
-RF-002 & Criação da página Web & utilzar html, css e javascript para criar a página web onde os usuários poderam se cadastrar, se inscrever em eventos,  caso sejam participantes, e para os organizadores, permitir o uso das funções implementados no banco de dados pelo RF-001 \tabularnewline \hline
-RF-003 & Busca e filtro de eventos & permitir aos participantes realizar buscas no banco de dados por palavras-chave e filtrar eventos(e.g. por local, tipo de evento, artistas/palestrantes, período, etc) bem como não exibir eventos aos participantes que não podem se increver nos mesmos através condições de participação(e.g. ser maior de 18 anos). \tabularnewline \hline
-RF-004 & Descrição detalhada de cada evento & Para eventos presenciais, o sistema deve disponibilizar todas as informações necessárias para que os participantes possam comparecer ao evento. ara eventos on-line, o sistema deve disponibilizar os links de acesso ao evento por meio de comunicações enviadas aos inscritos. \tabularnewline \hline
-RF-005 & Criação de formulários de inscrição personalizados. & Cada evento precisa de um formulário de incrição, que não é o mesmo para todos. \tabularnewline \hline
-RF-006 & Gerenciamento de inscrições & Os organizadores precisam de informações sobre seus eventos, como conﬁrmação de inscrição, lista de presença etc. \tabularnewline
+  RF101 & Homepage & Pagina inicial exibindo os eventos disponiveis, caixa de busca e botão de cadastro.\tabularnewline \hline
+  RF102 & Cadastro/Login & Pagina de Cadastro com caixas de informações para preenchimento e possibilidade de login direto.\tabularnewline \hline
+  RF103 & Gerenciamento de Evento (Organizador) & Pagina exclusiva para Usuário Organizador onde será possível realizar o Crud dos eventos\tabularnewline \hline 
+  RF104 & Busca de Eventos & Realizar a busca e filtragem de eventos da Homepage baseado em palavras-chave.\tabularnewline \hline
+  RF105 & Inscrição Eventos & Página para inscrição no evento selecionado.\tabularnewline \hline
+  RF106 & Página de Usuário & Página com as informçãoes do usuário, e.g.: Eventos incritos/gerenciados e informações de cadastro.\tabularnewline \hline
+  RF107 & Página de Evento & Página com a informação do evento selecionado.\tabularnewline
+\bottomrule
+\end{tabular}
+
+\section{Requisitos Funcionais Banco de Dados}
+\begin{tabular}{>{\raggedright}p{1.5cm}>{\raggedright}p{4cm}>{\raggedright}p{10cm}}
+\toprule
+\textbf{ID} & \textbf{Requirement} & \textbf{Description} \tabularnewline 
+\midrule
+  RF201 & Criação de evento & Permitir ao usuário criar um evento, atribuindo as informações necessárias.\tabularnewline \hline
+  RF202 & Consulta de evento & Filtrar eventos com base em informações e palavras chaves\tabularnewline \hline
+  RF203 & Atualizção de evento & Adicionar, remover ou alterar informções sobre o evento.\tabularnewline \hline
+  RF204 & Remoção de evento & Excluir um evento.\tabularnewline \hline
+  RF205 & Gerar Lista de Presença & Exportar uma lista de inscritos no evento.\tabularnewline 
+\bottomrule
+\end{tabular}
+
+\section{Requisitos Funcionais Backend}
+
+\begin{tabular}{>{\raggedright}p{1.5cm}>{\raggedright}p{4cm}>{\raggedright}p{10cm}}
+\toprule
+\textbf{ID} & \textbf{Requirement} & \textbf{Description} \tabularnewline 
+\midrule
+  RF301 & Pedidos de Leitura & Comunicar pedidos de leitura de informção do Banco de dados feitos pela webpage. \tabularnewline \hline
+  RF302 & Pedidos de Escrita & Comunicar pedidos de Escrita de informações no Banco de dados feitos pela webpage.\tabularnewline \hline
+  RF303 & Pedidos de Remoção & Comunicar pedidos de remoção de informações ou de eventos em si do banco de dados feitos pela webpage.\tabularnewline \hline
+  RF304 & Pedidos de Atualização & Comunicar pedidos de atualização de informção, tanto de usuários quanto de eventos, feitos pela web page ao banco de dados.\tabularnewline 
 \bottomrule
 \end{tabular}
 
@@ -79,18 +210,27 @@ RF-006 & Gerenciamento de inscrições & Os organizadores precisam de informaç�
 \toprule
 \textbf{ID} & \textbf{Requirement} & \textbf{Description} \tabularnewline 
 \midrule
-RNF-001 & Sistema de notificações & Organizadores poderão se comunicar com os inscritos por e-mail ou mensagens no sistema, participantes receberão notiﬁcações sobre novos eventos, alterações em eventos inscritos etc. \tabularnewline \hline
-RNF-002 & Perﬁs para organizadores e participantes. & Os perfis devem mostrar informações sobre seu usuário, como Histórico de eventos participados e/ou organizados. \tabularnewline \hline
-RNF-003 & Conﬁgurações de notiﬁcações e privacidade. & Permitir aos usuário configurar quando serem notificados e quais dados seram compartilhados \tabularnewline \hline
-RNF-004 & Sistema Multimidia & Os organizadores e participantes poderam fazer Upload de fotos e vídeos, promocionais ou não. \tabularnewline \hline 
-RNF-005 & Comentários sobre as fotos. & Permitir que os usuários se comuniquem através de comentário nas fotos e vídeos postados. \tabularnewline \hline 
-RNF-006 & Moderação de fotos e comentários. & Permitir aos adiminstradores de eventos realizarem moderação sobre os conteúdos postados baseados em suas \textit{guidelines} \tabularnewline \hline
-RNF-007 & Integração com Redes socias & Permitir o Compartilhamento de eventos nas redes sociais. \tabularnewline \hline
-RNF-008 & Visualização de eventos no maps. & Integrar a localização dos eventos ao google maps, mostrando seus locais.\tabularnewline
+RNF001 & Sistema de notificações & Organizadores poderão se comunicar com os inscritos por e-mail ou mensagens no sistema, participantes receberão notiﬁcações sobre novos eventos, alterações em eventos inscritos etc. \tabularnewline \hline
+RNF002 & Perﬁs para organizadores e participantes. & Os perfis devem mostrar informações sobre seu usuário, como Histórico de eventos participados e/ou organizados. \tabularnewline \hline
+RNF003 & Sistema de Upload multimidia & Permitir que os usuários postem fotos e vídeos. \tabularnewline \hline 
+RNF-008 & Sistema de comentarios & Permitir comentarios em fotos.\tabularnewline
 
 \bottomrule
 \end{tabular}
 
+
+\chapter{Restrições e Riscos}
+
+\section{Restrições}
+    O sucesso do projeto pode ser interrompido se um ou mais do seguintes fatores ocorrerem:
+    \begin{itemize}
+        \item Falha de atender aos requerimentos listados pela entidade superior.
+        \item Falha de se cumprir com o prazo de entrega determindado.
+        \item Incapacidade dos autores de implementarem as funcionalidades exigidas por conta de falta de conhecimento da utilização das ferramentas necessárias.
+    \end{itemize}
+
+
+\section{Definição de Risco}
 
 \begin{appendices}
 \chapter{Glossário}
