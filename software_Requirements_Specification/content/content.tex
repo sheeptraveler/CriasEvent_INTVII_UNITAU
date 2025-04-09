@@ -64,7 +64,36 @@
 \chapter{Requisitos}
 \label{Requisitos}
 
-\section{Requisitos Funcionais}
+\section{Requisitos Funcionais Página Web}
+
+\begin{tabular}{>{\raggedright}p{1.5cm}>{\raggedright}p{4cm}>{\raggedright}p{10cm}}
+\toprule
+\textbf{ID} & \textbf{Requirement} & \textbf{Description} \tabularnewline 
+\midrule
+  RF101 & Homepage & Pagina inicial exibindo os eventos disponiveis, caixa de busca e botão de cadastro.\tabularnewline \hline
+  RF102 & Cadastro/Login & Pagina de Cadastro com caixas de informações para preenchimento e possibilidade de login direto.\tabularnewline \hline
+  RF103 & Gerenciamento de Evento (Organizador) & Pagina exclusiva para Usuário Organizador onde será possível realizar o Crud dos eventos\tabularnewline \hline 
+  RF104 & Busca de Eventos & Realizar a busca e filtragem de eventos da Homepage baseado em palavras-chave.\tabularnewline \hline
+  RF105 & Inscrição Eventos & Página para inscrição no evento selecionado.\tabularnewline \hline
+  RF106 & Página de Usuário & Página com as informçãoes do usuário, e.g.: Eventos incritos/gerenciados e informações de cadastro.\tabularnewline \hline
+  RF107 & Página de Evento & Página com a informação do evento selecionado.\tabularnewline
+\bottomrule
+\end{tabular}
+
+\section{Requisitos Funcionais Banco de Dados}
+\begin{tabular}{>{\raggedright}p{1.5cm}>{\raggedright}p{4cm}>{\raggedright}p{10cm}}
+\toprule
+\textbf{ID} & \textbf{Requirement} & \textbf{Description} \tabularnewline 
+\midrule
+  RF201 & Criação de evento & Permitir ao usuário criar um evento, atribuindo as informações necessárias.\tabularnewline \hline
+  RF202 & Consulta de evento & Filtrar eventos com base em informações e palavras chaves\tabularnewline \hline
+  RF203 & Atualizção de evento & Adicionar, remover ou alterar informções sobre o evento.\tabularnewline \hline
+  RF204 & Remoção de evento & Excluir um evento.\tabularnewline \hline
+  RF205 & Gerar Lista de Presença & Exportar uma lista de inscritos no evento.\tabularnewline 
+\bottomrule
+\end{tabular}
+
+\section{Requisitos Funcionais Backend}
 
 \begin{tabular}{>{\raggedright}p{1.5cm}>{\raggedright}p{4cm}>{\raggedright}p{10cm}}
 \toprule
