@@ -1,25 +1,17 @@
 \chapter{Introdução}
 \label{ch:intro}
 \section{Propósito}
-    O presente projeto pretende criar um site para gerenciamento de eventos chamado \textit{CriasEvent}, para que os organizaores possam criar e gerenciar eventos, enquanto que os participantes possam se inscrever nos mesmos.
+    O presente projeto pretende criar um site para gerenciamento de eventos chamado \textit{CriasEvent}, para que os organizadores possam criar e gerenciar eventos, enquanto os participantes possam se inscrever nos mesmos.
 \section{Audiência}
-    O projeto se destina a organizadores de evento que querem uma plataforma para organizar e disponizar seus eventos, tanto presencias como onlines, e para os participantes que desejam se increver e participar de eventos, com o diferencial de poderem fazer incrições para diferentes eventos em uma mesma página.
+    O projeto se destina a organizadores de evento que querem uma plataforma para organizar e disponibilizar seus eventos, tanto presencias como onlines, e para os participantes que desejam se inscrever e participar de eventos, com o diferencial de poderem fazer inscrições para diferentes eventos em uma mesma página.
 \section{Uso previsto}
-    Espera-se que o sistema seja usado por diferentes organizadores para criarem e listarem seus eventos para que os participantes possam acessar quais eventos estão disponíveis e se increverem nos mesmos.
-\section{Escopo}
-    O sistema irá fazer:
-    \begin{itemize}
-        \item Criação de eventos: preenchimento de informações, upload de imagens, deﬁnição de vagas, etc.
-        \item Gerenciamento de inscrições: conﬁrmação, lista de presença, envio de mensagens.
-        \item Acesso a relatórios de inscritos e participantes.
-        \item Criação e gerenciamento de galeria de fotos do evento.
-        \item Comunicação com participantes através do sistema.
-        \item Busca e ﬁltro de eventos por diversos critérios.
-        \item Inscrição em eventos.
-        \item Acesso a informações detalhadas dos eventos inscritos.
-        \item Participação na galeria de fotos do evento, com uploads e comentários.
-        \item Recebimento de notiﬁcações sobre eventos de interesse.
-    \end{itemize}
+  Espera-se que o site \textit{CriasEvent} seja acessado por usuários cadastrados, que podem ser tanto organizadores quanto participantes. 
+
+  Para participatnes, o site será uma plataforma de inscrição e de consulta, onde o usuário Participante poderá ver quais eventos estão sendo divulgados, e se desejar, se increver nos mesmos, bem como consultar quais eventos já está inscrito. 
+
+  Para organizadores, o site será utilizado para gerenciamento dos eventos, onde os mesmos poderão ser criados, deletados e atualizados pelo organizador, bem como disponibilizados e customizados na página de eventos
+
+
 \section{Definição de Risco}
     O sucesso do projeto pode ser interrompido se um ou mais do seguintes fatores ocorrerem:
     \begin{itemize}
@@ -33,13 +25,23 @@
 \label{Descrição Geral}
 
 \section{Classe de Usuários e suas características}
-\textit{CriasEvent} tem basicamente três camadas de uso:
+\textit{CriasEvent} tem basicamente três classes de uso:
     \begin{itemize}
-        \item \textbf{Organizadores}: Criam e gerenciam eventos.
-        \item \textbf{Participantes}: Buscam, se inscrevem nos eventos disponíveis.
-        \item \textbf{Adiminstrador}: Controlam todo o conteúdo do site.
+        \item \textbf{Organizadores}: Criam e gerenciam seus eventos.
+        \item \textbf{Participantes}: Acessam, Buscam e se inscrevem nos eventos disponíveis.
+        \item \textbf{Administrador}: Controlam todo o conteúdo do site(Frontend e Backend).
     \end{itemize}
 
+\section{Escopo}
+    \textit{CriasEvent} será capaz de:
+    \begin{itemize}
+      \item Exibição em Interface Web: todos os eventos serão exibidos através de uma página web. 
+      \item Gerenciamento de eventos: CRUD dos eventos: Criação, Consulta, Atualização e Remoção de eventos.
+      \item Gerenciamento de inscrições: Para participantes haverá Conﬁrmação(testar se o participante pode se inscrever no evento), e para Organizadores haverá acesso a relatórios de inscritos e participantes.
+      \item Busca e ﬁltro de eventos: Participantes poderão buscar por eventos baseados em palavras-chave.
+      \item Inscrição em eventos.
+      \item Acesso às informações detalhadas dos eventos inscritos: data de ocorrência, local, requisitos, etc.
+    \end{itemize}
 \section{Necessidades de Usuários}
 	\textit{CriasEvent} pretende criar uma plataforma simples e sucinta, permitindo aos participantes visualizarem, se increverem em eventos. Note que o site não hospeda nenhum evento em si, apenas informações de inscrição e links relevantes de participação. Para os organizdores, \textit{CriasEvent} pretende ser uma plataforma onde os mesmos possam executar operações de CRUD de uma forma acessível e simples para poderem gerenciar seus eventos.
 
