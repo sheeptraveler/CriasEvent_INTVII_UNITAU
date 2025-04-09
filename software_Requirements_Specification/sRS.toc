@@ -7,14 +7,16 @@
 \contentsline {chapter}{\numberline {2}Descrição Geral}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Classe de Usuários e suas características}{3}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Escopo}{3}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Necessidades de Usuários}{3}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Ambiente de Operação}{4}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Restrições}{4}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Requisitos}{5}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Requisitos Funcionais Página Web}{5}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Requisitos Funcionais Banco de Dados}{5}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Requisitos Funcionais Backend}{6}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Requisitos não funcionais}{6}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Definição de Risco}{6}{section.3.5}%
-\contentsline {chapter}{Appendices}{7}{section*.3}%
-\contentsline {chapter}{\numberline {A}Glossário}{8}{appendix.1.A}%
+\contentsline {section}{\numberline {2.3}Ambiente de Operação}{3}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Necessidades de Usuários}{4}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Casos de Uso}{4}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Requisitos}{5}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Requisitos Funcionais Página Web}{5}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Requisitos Funcionais Banco de Dados}{5}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Requisitos Funcionais Backend}{6}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Requisitos não funcionais}{6}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Restrições e Riscos}{7}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Restrições}{7}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Definição de Risco}{7}{section.5.2}%
+\contentsline {chapter}{Appendices}{8}{section*.3}%
+\contentsline {chapter}{\numberline {A}Glossário}{9}{appendix.1.A}%

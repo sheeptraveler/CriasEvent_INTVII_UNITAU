@@ -35,9 +35,6 @@
       \item Acesso às informações detalhadas dos eventos inscritos: data de ocorrência, local, requisitos, etc.
     \end{itemize}
 
-\section{Necessidades de Usuários}
-	\textit{CriasEvent} pretende criar uma plataforma simples e sucinta, permitindo aos participantes visualizarem, se increverem em eventos. Note que o site não hospeda nenhum evento em si, apenas informações de inscrição e links relevantes de participação. Para os organizdores, \textit{CriasEvent} pretende ser uma plataforma onde os mesmos possam executar operações de CRUD de uma forma acessível e simples para poderem gerenciar seus eventos.
-
 \section{Ambiente de Operação}
 	O \textit{website CriasEvent} funcionará em qualquer navegador, logo  em qualquer sistema operacional com acesso a um navegador.
 
@@ -51,15 +48,12 @@
 \bottomrule
 \end{tabular}
 
-\section{Restrições}
-    O sucesso do projeto pode ser interrompido se um ou mais do seguintes fatores ocorrerem:
-    \begin{itemize}
-        \item Falha de atender aos requerimentos listados pela entidade superior.
-        \item Falha de se cumprir com o prazo de entrega determindado.
-        \item Incapacidade dos autores de implementarem as funcionalidades exigidas por conta de falta de conhecimento da utilização das ferramentas necessárias.
-    \end{itemize}
-
 \newpage
+
+\chapter{Necessidades de Usuários}
+\section{Casos de Uso}
+	\textit{CriasEvent} pretende criar uma plataforma simples e sucinta, permitindo aos participantes visualizarem, se increverem em eventos. Note que o site não hospeda nenhum evento em si, apenas informações de inscrição e links relevantes de participação. Para os organizdores, \textit{CriasEvent} pretende ser uma plataforma onde os mesmos possam executar operações de CRUD de uma forma acessível e simples para poderem gerenciar seus eventos.
+
 
 \chapter{Requisitos}
 \label{Requisitos}
@@ -99,12 +93,10 @@
 \toprule
 \textbf{ID} & \textbf{Requirement} & \textbf{Description} \tabularnewline 
 \midrule
-RF-001 & CRUD do banco de dados dos eventos. & Utilizar mySQL para permitir criação, edição, exculsão, atualização dos eventos para os organizadores \tabularnewline \hline
-RF-002 & Criação da página Web & utilzar html, css e javascript para criar a página web onde os usuários poderam se cadastrar, se inscrever em eventos,  caso sejam participantes, e para os organizadores, permitir o uso das funções implementados no banco de dados pelo RF-001 \tabularnewline \hline
-RF-003 & Busca e filtro de eventos & permitir aos participantes realizar buscas no banco de dados por palavras-chave e filtrar eventos(e.g. por local, tipo de evento, artistas/palestrantes, período, etc) bem como não exibir eventos aos participantes que não podem se increver nos mesmos através condições de participação(e.g. ser maior de 18 anos). \tabularnewline \hline
-RF-004 & Descrição detalhada de cada evento & Para eventos presenciais, o sistema deve disponibilizar todas as informações necessárias para que os participantes possam comparecer ao evento. ara eventos on-line, o sistema deve disponibilizar os links de acesso ao evento por meio de comunicações enviadas aos inscritos. \tabularnewline \hline
-RF-005 & Criação de formulários de inscrição personalizados. & Cada evento precisa de um formulário de incrição, que não é o mesmo para todos. \tabularnewline \hline
-RF-006 & Gerenciamento de inscrições & Os organizadores precisam de informações sobre seus eventos, como conﬁrmação de inscrição, lista de presença etc. \tabularnewline
+  RF301 & Pedidos de Leitura & Comunicar pedidos de leitura de informção do Banco de dados feitos pela webpage. \tabularnewline \hline
+  RF302 & Pedidos de Escrita & Comunicar pedidos de Escrita de informações no Banco de dados feitos pela webpage.\tabularnewline \hline
+  RF303 & Pedidos de Remoção & Comunicar pedidos de remoção de informações ou de eventos em si do banco de dados feitos pela webpage.\tabularnewline \hline
+  RF304 & Pedidos de Atualização & Comunicar pedidos de atualização de informção, tanto de usuários quanto de eventos, feitos pela web page ao banco de dados.\tabularnewline 
 \bottomrule
 \end{tabular}
 
@@ -114,17 +106,25 @@ RF-006 & Gerenciamento de inscrições & Os organizadores precisam de informaç�
 \toprule
 \textbf{ID} & \textbf{Requirement} & \textbf{Description} \tabularnewline 
 \midrule
-RNF-001 & Sistema de notificações & Organizadores poderão se comunicar com os inscritos por e-mail ou mensagens no sistema, participantes receberão notiﬁcações sobre novos eventos, alterações em eventos inscritos etc. \tabularnewline \hline
-RNF-002 & Perﬁs para organizadores e participantes. & Os perfis devem mostrar informações sobre seu usuário, como Histórico de eventos participados e/ou organizados. \tabularnewline \hline
-RNF-003 & Conﬁgurações de notiﬁcações e privacidade. & Permitir aos usuário configurar quando serem notificados e quais dados seram compartilhados \tabularnewline \hline
-RNF-004 & Sistema Multimidia & Os organizadores e participantes poderam fazer Upload de fotos e vídeos, promocionais ou não. \tabularnewline \hline 
-RNF-005 & Comentários sobre as fotos. & Permitir que os usuários se comuniquem através de comentário nas fotos e vídeos postados. \tabularnewline \hline 
-RNF-006 & Moderação de fotos e comentários. & Permitir aos adiminstradores de eventos realizarem moderação sobre os conteúdos postados baseados em suas \textit{guidelines} \tabularnewline \hline
-RNF-007 & Integração com Redes socias & Permitir o Compartilhamento de eventos nas redes sociais. \tabularnewline \hline
-RNF-008 & Visualização de eventos no maps. & Integrar a localização dos eventos ao google maps, mostrando seus locais.\tabularnewline
+RNF001 & Sistema de notificações & Organizadores poderão se comunicar com os inscritos por e-mail ou mensagens no sistema, participantes receberão notiﬁcações sobre novos eventos, alterações em eventos inscritos etc. \tabularnewline \hline
+RNF002 & Perﬁs para organizadores e participantes. & Os perfis devem mostrar informações sobre seu usuário, como Histórico de eventos participados e/ou organizados. \tabularnewline \hline
+RNF003 & Sistema de Upload multimidia & Permitir que os usuários postem fotos e vídeos. \tabularnewline \hline 
+RNF-008 & Sistema de comentarios & Permitir comentarios em fotos.\tabularnewline
 
 \bottomrule
 \end{tabular}
+
+
+\chapter{Restrições e Riscos}
+
+\section{Restrições}
+    O sucesso do projeto pode ser interrompido se um ou mais do seguintes fatores ocorrerem:
+    \begin{itemize}
+        \item Falha de atender aos requerimentos listados pela entidade superior.
+        \item Falha de se cumprir com o prazo de entrega determindado.
+        \item Incapacidade dos autores de implementarem as funcionalidades exigidas por conta de falta de conhecimento da utilização das ferramentas necessárias.
+    \end{itemize}
+
 
 \section{Definição de Risco}
 
