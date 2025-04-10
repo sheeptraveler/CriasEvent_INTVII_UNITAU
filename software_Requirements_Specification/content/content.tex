@@ -91,16 +91,9 @@
 \chapter{Relacionamento de Entidades}
 
 \section{Diagrama ER}
-\textit{CriasEvent} irá tratar uma entidade usuario que pode vir a ter 3 cargos:
-\begin{itemize}
-    \item Cliente
-    \item Organizador
-    \item Administrador
-\end{itemize}
-\textit{CriasEvent} com base no "Ranking" deste usuario ele terá acesso a funcionalidades espeficicas de edição geral. \par
 A imagem a seguir demonstra um Diagrama de Entidade Relacionamento, para um entendimento base dos relacionamentos entre as atividades fornecidas ao Usuario.
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{images/diagrama_ER.png}
   \caption{Diagrama de Entidade Relacionamento}
@@ -184,7 +177,7 @@ Imagem aderida ao evento, esta inclusao é feita tanto pelo usuario, para postar
   6 & ImagemEvento(usuarioId) & Usuario(Id) & Para postagem da foto, vincula o usuario a imagem por meio do Id. 
   \tabularnewline \hline
   7 & ImagemEvento(EventoId) & Evento(EventoId) & Anexa a imagem ao evento com auxilio do ID de evento.
-  \tabularnewline \hline
+  \tabularnewline 
 \bottomrule
 \end{tabular}
 
@@ -242,24 +235,27 @@ Imagem aderida ao evento, esta inclusao é feita tanto pelo usuario, para postar
 RNF001 & Sistema de notificações & Organizadores poderão se comunicar com os inscritos por e-mail ou mensagens no sistema, participantes receberão notiﬁcações sobre novos eventos, alterações em eventos inscritos etc. \tabularnewline \hline
 RNF002 & Perﬁs para organizadores e participantes. & Os perfis devem mostrar informações sobre seu usuário, como Histórico de eventos participados e/ou organizados. \tabularnewline \hline
 RNF003 & Sistema de Upload multimidia & Permitir que os usuários postem fotos e vídeos. \tabularnewline \hline 
-RNF-008 & Sistema de comentarios & Permitir comentarios em fotos.\tabularnewline
+RNF004 & Sistema de comentarios & Permitir comentarios em fotos.\tabularnewline
 
 \bottomrule
 \end{tabular}
 
 
-\chapter{Restrições e Riscos}
-
-\section{Restrições}
-    O sucesso do projeto pode ser interrompido se um ou mais do seguintes fatores ocorrerem:
-    \begin{itemize}
-        \item Falha de atender aos requerimentos listados pela entidade superior.
-        \item Falha de se cumprir com o prazo de entrega determindado.
-        \item Incapacidade dos autores de implementarem as funcionalidades exigidas por conta de falta de conhecimento da utilização das ferramentas necessárias.
-    \end{itemize}
-
+\chapter{Riscos}
 
 \section{Definição de Risco}
+\begin{tabular}{>{\raggedright}p{1cm}>{\raggedright}p{5cm}>{\raggedright}p{5cm}>{\raggedright}p{4.5cm}}
+\toprule
+  \textbf{ID} & \textbf{Descrição} & \textbf{Contingência} & \textbf{Requisitos Afetados} \tabularnewline 
+\midrule
+  R001 & Falha de atender aos requerimentos listados pela entidade superior. & Conversar com dita entidade e reconciliar o mal-entendido & Dependente \tabularnewline \hline 
+  R002 & Falha de se cumprir com o prazo de entrega determinado.& Discutir a possibilidade de se entregar em uma data posterior & Dependente de quais requisitos ainda precisam ser implementados \tabularnewline \hline
+  R003 & Incapacidade dos autores de implementarem as funcionalidades exigidas por conta de falta de conhecimento da utilização das ferramentas necessárias.& Conhecer e praticar tais ferramentas & Dependente de quais requisitos necessitam de ditas ferramentas \tabularnewline \hline
+  R004 & Falha de se implementar Módulo 1: Página Web & Dividir e conquistar e, em último caso, negociar nova data de entrega. & RF205 RNF001 RNF002 RNF003 RNF004\tabularnewline \hline 
+  R005 & Falha de se implementar Módulo 2: Banco de Dados & Dividir e conquistar e, em último caso, negociar nova data de entrega. & RF103-RF107 RF301-RF304\tabularnewline \hline  
+  R005 & Falha de se implementar Módulo 3: BackEnd & Dividir e conquistar e, em último caso, negociar nova data de entrega. & RF101 RF103-RF107 \tabularnewline 
+\bottomrule 
+\end{tabular}
 
 \begin{appendices}
 \chapter{Glossário}

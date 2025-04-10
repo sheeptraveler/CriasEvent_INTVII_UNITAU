@@ -1,3 +1,3 @@
-\def \vhCurrentVersion {1.0}
-\def \vhCurrentDate {26.03.2025}
-\newsetsimple \vhAllAuthorsSet {C. Santos, M. Hashimoto, M. Oliveira, P. Nassif}
+\def \vhCurrentVersion {1.4}
+\def \vhCurrentDate {08.04.2025}
+\newsetsimple \vhAllAuthorsSet {C. Santos|C. Santos, M. Hashimoto, M. Oliveira, P. Nassif|M. Hashimoto|M. Oliveira|P. Nassif}

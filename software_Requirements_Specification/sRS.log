@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.24)  9 APR 2025 21:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.26)  9 APR 2025 23:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -434,14 +434,14 @@ Package: mfirstuc 2022/10/14 v2.08 (NLCT)
 Package: xfor 2009/02/05 v1.05 (NLCT)
 )
 (/usr/local/texlive/2025/texmf-dist/tex/latex/datatool/datatool-base.sty
-Package: datatool-base 2025/03/14 v3.2 (NLCT)
+Package: datatool-base 2025/03/25 v3.3 (NLCT)
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/tracklang/tracklang.sty
 Package: tracklang 2025/03/11 v1.6.6 (NLCT) Track Languages
 
 (/usr/local/texlive/2025/texmf-dist/tex/generic/tracklang/tracklang.tex))
 (/usr/local/texlive/2025/texmf-dist/tex/latex/datatool/datatool-l3fp.def
-File: datatool-l3fp.def 2025/03/14 v3.2 (NLCT)
+File: datatool-l3fp.def 2025/03/25 v3.3 (NLCT)
 )
 \@dtl@toks=\toks39
 \@dtl@tmpcount=\count345
@@ -450,7 +450,7 @@ File: datatool-l3fp.def 2025/03/14 v3.2 (NLCT)
 \dtl@sortresult=\count346
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/datatool/datatool-utf8.ldf
-File: datatool-utf8.ldf 2025/03/14 v3.2 (NLCT)
+File: datatool-utf8.ldf 2025/03/25 v3.3 (NLCT)
 )
 \@dtl@datatype=\count347
 \l__datatool_tmpa_int=\count348
@@ -1260,7 +1260,7 @@ Overfull \hbox (11.00957pt too wide) in paragraph at lines 41--50
 {/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
 Cap\'{\i }tulo 3.
-<images/user_case.jpg, id=213, 468.85162pt x 558.73744pt>
+<images/user_case.jpg, id=208, 468.85162pt x 558.73744pt>
 File: images/user_case.jpg Graphic file (type jpg)
 <use images/user_case.jpg>
 Package pdftex.def Info: images/user_case.jpg  used on input line 59.
@@ -1273,14 +1273,11 @@ Package pdftex.def Info: images/user_case.jpg  used on input line 59.
 
 [6]
 Cap\'{\i }tulo 4.
-<images/diagrama_ER.png, id=222, 602.25pt x 643.40375pt>
+<images/diagrama_ER.png, id=217, 602.25pt x 643.40375pt>
 File: images/diagrama_ER.png Graphic file (type png)
 <use images/diagrama_ER.png>
-Package pdftex.def Info: images/diagrama_ER.png  used on input line 105.
+Package pdftex.def Info: images/diagrama_ER.png  used on input line 98.
 (pdftex.def)             Requested size: 382.40794pt x 408.55684pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 
 
 [7
@@ -1288,13 +1285,13 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 ]
 
 [8 <./images/diagrama_ER.png>]
-Overfull \hbox (11.00957pt too wide) in paragraph at lines 172--190
+
+[9]
+Overfull \hbox (11.00957pt too wide) in paragraph at lines 165--183
 [] 
  []
 
 
-
-[9]
 
 [10]
 Cap\'{\i }tulo 5.
@@ -1306,6 +1303,11 @@ Cap\'{\i }tulo 5.
 
 [12]
 Cap\'{\i }tulo 6.
+
+Overfull \hbox (11.00958pt too wide) in paragraph at lines 247--259
+[] 
+ []
+
 
 
 [13
@@ -1329,13 +1331,13 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `sRS.out' has not changed.
-(rerunfilecheck)             Checksum: 0C83ED0DDE5AC099920925CD7B964C61;4907.
+(rerunfilecheck)             Checksum: BB655CCCFF1E5037982B1CE64CDBFC1F;4748.
  ) 
 Here is how much of TeX's memory you used:
  27096 strings out of 473190
- 476528 string characters out of 5715806
- 1142749 words of memory out of 5000000
- 49817 multiletter control sequences out of 15000+600000
+ 476531 string characters out of 5715806
+ 1142794 words of memory out of 5000000
+ 49818 multiletter control sequences out of 15000+600000
  574860 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,8n,79p,2541b,647s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1350,10 +1352,10 @@ texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/te
 xlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texl
 ive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texliv
 e/2025/texmf-dist/fonts/type1/public/cm-super/sfti1728.pfb>
-Output written on sRS.pdf (18 pages, 421443 bytes).
+Output written on sRS.pdf (18 pages, 417940 bytes).
 PDF statistics:
- 328 PDF objects out of 1000 (max. 8388607)
- 279 compressed objects within 3 object streams
- 54 named destinations out of 1000 (max. 500000)
- 267 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 323 PDF objects out of 1000 (max. 8388607)
+ 274 compressed objects within 3 object streams
+ 53 named destinations out of 1000 (max. 500000)
+ 259 words of extra memory for PDF output out of 10000 (max. 10000000)
 

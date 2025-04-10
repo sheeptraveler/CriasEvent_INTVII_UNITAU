@@ -1,5 +1,5 @@
 \babel@toc {portuguese}{}\relax 
-\contentsline {chapter}{Revision History}{1}{chapter*.2}%
+\contentsline {chapter}{Histórico de Revisão}{1}{chapter*.2}%
 \contentsline {chapter}{Lista de Figuras}{2}{chapter*.3}%
 \contentsline {chapter}{\numberline {1}Introdução}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Propósito}{3}{section.1.1}%
@@ -15,19 +15,18 @@
 \contentsline {section}{\numberline {3.3}Descrição Casos de Uso para o Organizador}{6}{section.3.3}%
 \contentsline {chapter}{\numberline {4}Relacionamento de Entidades}{7}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Diagrama ER}{7}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Tabela Usuario}{7}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Tabela Evento}{8}{section.4.3}%
+\contentsline {section}{\numberline {4.2}Tabela Usuario}{8}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Tabela Evento}{9}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Tabela Participacao}{9}{section.4.4}%
 \contentsline {section}{\numberline {4.5}Comentario}{9}{section.4.5}%
-\contentsline {section}{\numberline {4.6}ImagemEvento}{9}{section.4.6}%
+\contentsline {section}{\numberline {4.6}ImagemEvento}{10}{section.4.6}%
 \contentsline {section}{\numberline {4.7}Explicacao dos Relacionamentos}{10}{section.4.7}%
 \contentsline {chapter}{\numberline {5}Requisitos}{11}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Requisitos Funcionais Página Web}{11}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Requisitos Funcionais Banco de Dados}{11}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Requisitos Funcionais Backend}{12}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Requisitos não funcionais}{12}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Restrições e Riscos}{13}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Restrições}{13}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Definição de Risco}{13}{section.6.2}%
+\contentsline {chapter}{\numberline {6}Riscos}{13}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Definição de Risco}{13}{section.6.1}%
 \contentsline {chapter}{Appendices}{14}{section*.6}%
 \contentsline {chapter}{\numberline {A}Glossário}{15}{appendix.1.A}%
