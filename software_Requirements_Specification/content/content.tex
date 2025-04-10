@@ -88,6 +88,106 @@
 \bottomrule
 \end{tabular}
 
+\chapter{Relacionamento de Entidades}
+
+\section{Diagrama ER}
+\textit{CriasEvent} irá tratar uma entidade usuario que pode vir a ter 3 cargos:
+\begin{itemize}
+    \item Cliente
+    \item Organizador
+    \item Administrador
+\end{itemize}
+\textit{CriasEvent} com base no "Ranking" deste usuario ele terá acesso a funcionalidades espeficicas de edição geral. \par
+A imagem a seguir demonstra um Diagrama de Entidade Relacionamento, para um entendimento base dos relacionamentos entre as atividades fornecidas ao Usuario.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{images/diagrama_ER.png}
+  \caption{Diagrama de Entidade Relacionamento}
+  \label{fig:diagram_Entity_Relatioship}
+\end{figure}
+
+\section{Tabela Usuario}
+A tabela usuario é fundamental para o estabelecimento das pessoas as quais usaram o \textit{CriasEvent}. Há 3 possibilidades distintas de usuarios sendo estes os previamente dito:
+\begin{itemize}
+    \item Cliente
+    \item Organizador
+    \item Administrador
+\end{itemize}
+Cliente é o usuario padrao do site, ao qual consumira os eventos gratuitos, Organizador de eventos será responsavel por criar o evento, edita-lo e monitorar seu acontecimento e o Administrador do site ficará responsavel por manter a ordem no site, tendo todas permissoes.
+Comentarios breves a respeito de suas variaveis:
+\begin{itemize}
+    \item Id : Chave primaria para indentificar o Usuario, sendo esta chave UNICA.
+    \item nome : Nome do usuario.
+    \item email : Email do Usuario.
+    \item dataNascimento : Data de nascimento do usuario.
+    \item senha : senha do Usuario
+    \item tipo : Previamente mencionado, os tipos de usuario possiveis (Cliente, Organizador ou Administrador).
+\end{itemize}
+
+\section{Tabela Evento}
+\textit{CriasEvent} fornece a possibilidade para o usuario Cliente se inscrever a um evento, para tal atividade sera necessario informacoes fundamentais no processo de criacao do evento aos quais sao armazenados na tabela Evento.
+
+\begin{itemize}
+    \item idEvento : Chave primaria para indentificacao do evento.
+    \item nomeEvento : Nome inserido pelo organizador do evento.
+    \item orgId : Chave estrangeira para identificacao do Organizador de eventos, utilizando seu Id armazenado.
+    \item descricao : Organizador de evento pode descrever o evento nesta área.
+    \item dataEvento : Data quando ocorrera o evento.
+    \item local : Local onde ocorrera o evento.
+    \item status : 3 Possibilidades distintas em que se pode encontrar o evento, sendo Ativo, Cancelado ou Removido.
+\end{itemize}
+
+\section{Tabela Participacao}
+Tabela com foco em armazenar os Clientes e os eventos aos quais estes participam.
+\begin{itemize}
+    \item Id : chave para propria participacao.
+    \item UsuarioId : Anexa o Id do usuario para agrupamento de usuario e evento.
+    \item EventoId : Anexa o Id do usuario para agrupamento de evento e usuario.
+\end{itemize}
+
+\section{Comentario}
+Tabela para obter os comentarios relacionados ao evento em questao, além de anexa-los ao usuarios que os fizeram.
+
+\begin{itemize}
+    \item Id : Chave primaria de cada comentario realizado.
+    \item UsuarioId : Chave estrangeira para identificacao de usuario que comentou no evento
+    \item eventoId : Chave estrangeira para identificacao do evento ao qual foi realizado o comentario sobre.
+    \item texto : Comentario realizado.
+    \item dataComentario : Data qual comentario foi realizado.
+\end{itemize}
+
+\section{ImagemEvento}
+Imagem aderida ao evento, esta inclusao é feita tanto pelo usuario, para postar sobre o evento ocorrido, ou até mesmo para promover o evento pelo organizador.
+
+\begin{itemize}
+    \item id : chave primaria para identificacao da imagem.
+    \item eventoId : chave estrangeira para identificacao do evento.
+    \item usuarioId : chave estrangeira para identificao do usuario ao qual realizou a postagem.
+    \item urlImagem : Endereco da imagem postada.
+    \item legenda : Breve descricao para imagem postada.
+\end{itemize}
+
+\section{Explicacao dos Relacionamentos}
+\begin{tabular}{>{\raggedright}p{1.5cm}>{\raggedright}p{4cm}>{\raggedright}p{4cm}>{\raggedright}p{6cm}}
+\toprule
+  \textbf{ID} & \textbf{Relacionamento FK} &\textbf{Relacionamento PK} & \textbf{Descrição}  \tabularnewline 
+\midrule
+  1 & Participacao(usuarioId) & Usuario(id) & Obtencao do id na tabela de usuario para marcar sua presenca no evento. 
+  \tabularnewline \hline
+  2 & Participacao(EventoId) & Evento(idEvento) & Variavel importante para anexar a presenca do usuario ao evento respectivo da sua participacao
+  \tabularnewline \hline
+  3 & Evento(orgId) & Usuario(Id) & Para criacao do evento precisa-se de um Organizador de eventos para tal ato, id deste Organizador armazenado. \tabularnewline \hline
+  4 & Comentario(usuarioId)& Usuario(Id) & Vincula o comentario armazenado ao Usuario que o fez. 
+  \tabularnewline \hline
+  5 & Comentario(eventoId) & Evento(idEvento) & Comentario sera anexado na pagina a um evento respectivo, para isso vincula-o ao EventoId. \tabularnewline \hline
+  6 & ImagemEvento(usuarioId) & Usuario(Id) & Para postagem da foto, vincula o usuario a imagem por meio do Id. 
+  \tabularnewline \hline
+  7 & ImagemEvento(EventoId) & Evento(EventoId) & Anexa a imagem ao evento com auxilio do ID de evento.
+  \tabularnewline \hline
+\bottomrule
+\end{tabular}
+
 \chapter{Requisitos}
 \label{Requisitos}
 
