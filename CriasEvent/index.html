@@ -12,10 +12,10 @@
         <div class="logo">CriasEvent</div>
         <input type="text" class="search-bar" placeholder="Pesquisar">
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Eventos</a>
-            <a href="#">Mídia</a>
-            <a href="#">Sobre</a>
+            <a href="index.html" class="active">Home</a>
+            <a href="eventos.html">Eventos</a>
+            <a href="midia.html">Mídia</a>
+            <a href="sobre.html">Sobre</a>
         </nav>
         <a href="cadastro.html" class="btn-cadastro">Cadastro</a>
         <button id="toggle-mode">🌙</button>
@@ -38,36 +38,10 @@
         </div>
     </section>
 
-    <!-- Modal de Cadastro -->
-    <div id="cadastroModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Cadastro</h2>
-            <form id="formCadastro">
-                <label for="nome">Nome</label>
-                <input type="text" id="nome" placeholder="Digite seu nome" required>
-
-                <label for="sobrenome">Sobrenome</label>
-                <input type="text" id="sobrenome" placeholder="Digite seu sobrenome" required>
-
-                <label for="dataNascimento">Data de Nascimento</label>
-                <input type="date" id="dataNascimento" required>
-
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Digite seu email" required>
-
-                <label for="senha">Senha</label>
-                <input type="password" id="senha" placeholder="Digite sua senha" required>
-
-                <button type="submit" class="btn-submit">Cadastrar</button>
-            </form>
-        </div>
-    </div>
-
     <!-- Seção de Eventos -->
     <section class="eventos">
         <!-- Card 1 - Show Felipe e Ryan -->
-        <div class="card zoo-style">
+        <div class="card">
             <div class="top-bar">Show Musical</div>
             <div class="image-container">
                 <img src="imagens/show.jpg" alt="Show Felipe e Ryan">
@@ -75,13 +49,14 @@
             <div class="content">
                 <div class="evento-subtitulo">REDESCUBRA</div>
                 <div class="title">FELIPE & RYAN</div>
-                <div class="dates">Múltiplas datas</div>
+                <div class="dates">25/06/2023 - 20:00h</div>
+                <div class="location">Teatro Metrópole</div>
                 <a href="#" class="buy-button">Comprar</a>
             </div>
         </div>
 
         <!-- Card 2 - Comédia Wesley Santos -->
-        <div class="card zoo-style">
+        <div class="card">
             <div class="top-bar">Stand-up Comedy</div>
             <div class="image-container">
                 <img src="imagens/comedia.jpg" alt="Comédia Wesley Santos">
@@ -89,13 +64,14 @@
             <div class="content">
                 <div class="evento-subtitulo">RIBA MUITO</div>
                 <div class="title">WESLEY SANTOS</div>
-                <div class="dates">Múltiplas datas</div>
+                <div class="dates">30/06/2023 - 21:30h</div>
+                <div class="location">Clube dos Comediantes</div>
                 <a href="#" class="buy-button">Comprar</a>
             </div>
         </div>
 
         <!-- Card 3 - Encontro de Carros -->
-        <div class="card zoo-style">
+        <div class="card">
             <div class="top-bar">Automotivo</div>
             <div class="image-container">
                 <img src="imagens/carros.jpg" alt="Encontro de Carros">
@@ -103,7 +79,8 @@
             <div class="content">
                 <div class="evento-subtitulo">ENCONTRO DE</div>
                 <div class="title">CARROS ESPORTIVOS</div>
-                <div class="dates">Múltiplas datas</div>
+                <div class="dates">02/07/2023 - 10:00h</div>
+                <div class="location">Parque do Itaim</div>
                 <a href="#" class="buy-button">Comprar</a>
             </div>
         </div>
@@ -118,7 +95,7 @@
             © 2025 CriasEvent - Todos os direitos reservados
         </div>
     </footer>
-
-    <script src="js/script.js"></script>
+    
+    <script src="JavaScript/script.js"></script>
 </body>
 </html>
