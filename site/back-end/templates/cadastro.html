@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro - CriasEvent</title>
-     <link rel="stylesheet" href="../static/css/styles.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+    <!-- Fonte -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <header>
         <div class="logo">CriasEvent</div>
         <nav>
-            <a href="index.html">Voltar para Home</a>
+            <a href="{{ url_for('index') }}">Voltar para Home</a>
         </nav>
         <button id="toggle-mode">🌙</button>
     </header>
@@ -21,17 +25,16 @@
             <h1>Crie sua conta</h1>
             <p class="subtitle">Junte-se a nós e descubra os melhores eventos da região</p>
             
-            <form class="form-cadastro" action="/cadastro" method="POST">
-               
+            <form class="form-cadastro" action="{{ url_for('cadastro') }}" method="POST">
                 <div class="form-row">
-        <div class="form-group">
+                    <div class="form-group">
                         <label for="nome">Nome Completo</label>
                         <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
                     </div>
 
                     <div class="form-group">
-                        <label for="usuário">Usuário</label>
-                        <input type="text" id="usuário" name="usuário" placeholder="Digite um nome de usuário">
+                        <label for="usuario">Usuário</label>
+                        <input type="text" id="usuario" name="usuario" placeholder="Digite um nome de usuário">
                     </div>
                 </div>
                     
@@ -45,8 +48,17 @@
                         <label for="email">E-mail</label>
                         <input type="email" id="email" name="email" required placeholder="seu@email.com">
                     </div>
+
+                    <div class="form-group">
+                        <label for="tipo">Tipo de Usuário</label>
+                        <select id="tipo" name="tipo" required>
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="cliente">Cliente</option>
+                            <option value="organizador">Organizador</option>
+                        </select>
+                    </div>
                 </div>
-                
+
                 <div class="form-row">
                     <div class="form-group">
                         <label for="senha">Senha</label>
@@ -68,7 +80,7 @@
                 <button type="submit" class="btn-submit">Cadastrar</button>
                 
                 <div class="login-link">
-                    Já tem uma conta? <a href="login.html">Faça login</a>
+                    Já tem uma conta? <a href="{{ url_for('login') }}">Faça login</a>
                 </div>
             </form>
         </div>
@@ -76,14 +88,15 @@
 
     <footer>
         <div class="social-icons">
-            <a href="#"><img src="back-end/static/imagens/insta.png" alt="Instagram"></a>
-            <a href="#"><img src="back-end/static/imagens/zap.png" alt="WhatsApp"></a>
+            <a href="#"><img src="{{ url_for('static', filename='imagens/insta.png') }}" alt="Instagram"></a>
+            <a href="#"><img src="{{ url_for('static', filename='imagens/zap.png') }}" alt="WhatsApp"></a>
         </div>
         <div class="copyright">
             © 2025 CriasEvent - Todos os direitos reservados
         </div>
     </footer>
 
-    <script src="back-end/static/JavaScript/script.js"></script>
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='JavaScript/script.js') }}"></script>
 </body>
 </html>

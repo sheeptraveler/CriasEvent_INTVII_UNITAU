@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eventos - CriasEvent</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <header>
+        <div class="logo">CriasEvent</div>
+        <input type="text" class="search-bar" placeholder="Pesquisar eventos..." />
+        
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('eventos') }}" class="active">Eventos</a>
+            <a href="{{ url_for('midia') }}">Mídia</a>
+            <a href="{{ url_for('sobre') }}">Sobre</a>
+        </nav>
+
+        {% if current_user.is_authenticated %}
+            <div class="profile-container">
+                <button onclick="toggleMenu()" class="profile-button">👤 {{ current_user.nome_usuario }}</button>
+                <div id="profileMenu" class="profile-menu">
+                    <p><strong>ID de Usuário:</strong> {{ current_user.id }}</p>
+                    <p><strong>Usuário:</strong> {{ current_user.nome_usuario }}</p>
+                    <p><strong>Nome:</strong> {{ current_user.nome_completo }}</p>
+                    <p><strong>Tipo:</strong> {{ current_user.tipo }}</p>
+                    <a href="{{ url_for('logout') }}">🚪 Sair</a>
+                </div>
+            </div>
+        {% else %}
+            <nav>
+                <a href="{{ url_for('mostrar_formulario_cadastro') }}" class="btn-cadastro">Cadastro</a>
+                <a href="{{ url_for('login') }}" class="btn-cadastro">Login</a>
+            </nav>
+        {% endif %}
+
+        <button id="toggle-mode">🌙</button>
+    </header>
+
+    <main class="container">
+        <section class="eventos-header">
+            <h1>Próximos Eventos</h1>
+            <div class="filters">
+                <button class="filter-btn active" data-category="all">Todos</button>
+                <button class="filter-btn" data-category="shows">Shows</button>
+                <button class="filter-btn" data-category="comedy">Comédia</button>
+                <button class="filter-btn" data-category="sports">Esportes</button>
+                <button class="filter-btn" data-category="culture">Cultura</button>
+            </div>
+        </section>
+
+        <section class="eventos-grid">
+            <!-- Evento 1 -->
+            <div class="card" data-categories="shows">
+                <div class="top-bar">Show Musical</div>
+                <div class="image-container">
+                    <img src="{{ url_for('static', filename='imagens/show.jpg') }}" alt="Show Felipe e Ryan" />
+                </div>
+                <div class="content">
+                    <div class="evento-subtitulo">REDESCUBRA</div>
+                    <div class="title">FELIPE & RYAN</div>
+                    <div class="dates">25/06/2023 - 20:00h</div>
+                    <div class="location">Teatro Metrópole</div>
+                    <a href="#" class="buy-button">Inscrever-se</a>
+                </div>
+            </div>
+
+            <!-- Evento 2 -->
+            <div class="card" data-categories="comedy">
+                <div class="top-bar">Stand-up Comedy</div>
+                <div class="image-container">
+                    <img src="{{ url_for('static', filename='imagens/comedia.jpg') }}" alt="Comédia Wesley Santos" />
+                </div>
+                <div class="content">
+                    <div class="evento-subtitulo">RIBA MUITO</div>
+                    <div class="title">WESLEY SANTOS</div>
+                    <div class="dates">30/06/2023 - 21:30h</div>
+                    <div class="location">Clube dos Comediantes</div>
+                    <a href="#" class="buy-button">Inscrever-se</a>
+                </div>
+            </div>
+
+            <!-- Evento 3 -->
+            <div class="card" data-categories="sports">
+                <div class="top-bar">Automotivo</div>
+                <div class="image-container">
+                    <img src="{{ url_for('static', filename='imagens/carros.jpg') }}" alt="Encontro de Carros" />
+                </div>
+                <div class="content">
+                    <div class="evento-subtitulo">ENCONTRO DE</div>
+                    <div class="title">CARROS ESPORTIVOS</div>
+                    <div class="dates">02/07/2023 - 10:00h</div>
+                    <div class="location">Parque do Itaim</div>
+                    <a href="#" class="buy-button">Inscrever-se</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="pagination">
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn next">Próximo ❯</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-icons">
+            <a href="#"><img src="{{ url_for('static', filename='imagens/insta.png') }}" alt="Instagram" /></a>
+            <a href="#"><img src="{{ url_for('static', filename='imagens/zap.png') }}" alt="WhatsApp" /></a>
+        </div>
+        <div class="copyright">
+            © 2025 CriasEvent - Todos os direitos reservados
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("profileMenu");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.profile-button')) {
+                const dropdowns = document.getElementsByClassName("profile-menu");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    const openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === "block") {
+                        openDropdown.style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+    <script src="{{ url_for('static', filename='JavaScript/script.js') }}"></script>
+</body>
+</html>

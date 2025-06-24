@@ -1,42 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CriasEvent</title>
-    <link rel="stylesheet" href="../static/css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
     <header>
         <div class="logo">CriasEvent</div>
-        <input type="text" class="search-bar" placeholder="Pesquisar">
+        <input type="text" class="search-bar" placeholder="Pesquisar" />
         <nav>
-            <a href="index.html" class="active">Home</a>
-            <a href="eventos.html">Eventos</a>
-            <a href="midia.html">Mídia</a>
-            <a href="sobre.html">Sobre</a>
-        </nav>
-        <a href="cadastro.html" class="btn-cadastro">Cadastro</a>
+            <a href="{{ url_for('index') }}" class="active">Home</a>
+            <a href="{{ url_for('eventos') }}">Eventos</a>
+            <a href="{{ url_for('midia') }}">Mídia</a>
+            <a href="{{ url_for('sobre') }}">Sobre</a>
+
+        {% if current_user.is_authenticated %}
+        <div class="profile-container">
+            <button onclick="toggleMenu()" class="profile-button">👤 {{ current_user.nome_usuario }}</button>
+            <div id="profileMenu" class="profile-menu">
+                <p><strong>ID de Usuário:</strong> {{ current_user.id }}</p>
+                <p><strong>Usuário:</strong> {{ current_user.nome_usuario }}</p>
+                <p><strong>Nome:</strong> {{ current_user.nome_completo }}</p>
+                <a href="{{ url_for('logout') }}">Sair</a>
+            </div>
+        </div>
+        {% else %}
+            <nav>
+                <a href="{{ url_for('mostrar_formulario_cadastro') }}" class="btn-cadastro">Cadastro</a>
+                <a href="{{ url_for('login') }}" class="btn-cadastro">Login</a>
+            </nav>
+        {% endif %}
+
+
+
         <button id="toggle-mode">🌙</button>
     </header>
 
-    <!-- Banner Rotativo -->
     <section class="banner">
         <div class="slides">
-            <div class="slide active" style="background-image: url('../static/imagens/banner3.jpg');"></div>
-            <div class="slide" style="background-image: url('../static/imagens/banner2.jpg');"></div>
-    </div>
+            <div class="slide active slide1">L</div>
+            <div class="slide slide2">R</div>
+
+        </div>
         <div class="banner-overlay"></div>
         <div class="banner-content">
             <h1>Os melhores eventos de Taubaté</h1>
             <p>Encontre experiências incríveis para curtir</p>
         </div>
         <div class="banner-controls">
-            <button class="banner-prev">❮</button>
-            <button class="banner-next">❯</button>
+            <button class="banner-prev"></button>
+            <button class="banner-next"></button>
         </div>
     </section>
+
 
     <!-- Seção de Eventos -->
     <section class="eventos">
@@ -44,7 +63,7 @@
         <div class="card">
             <div class="top-bar">Show Musical</div>
             <div class="image-container">
-                <img src="../static/imagens/show.jpg" alt="Show Felipe e Ryan">
+                <img src="{{ url_for('static', filename='imagens/show.jpg') }}" alt="Show Felipe e Ryan" />
             </div>
             <div class="content">
                 <div class="evento-subtitulo">REDESCUBRA</div>
@@ -59,14 +78,14 @@
         <div class="card">
             <div class="top-bar">Stand-up Comedy</div>
             <div class="image-container">
-                <img src="../static/imagens/comedia.jpg" alt="Comédia Wesley Santos">
+                <img src="{{ url_for('static', filename='imagens/comedia.jpg') }}" alt="Comédia Wesley Santos" />
             </div>
             <div class="content">
                 <div class="evento-subtitulo">RIBA MUITO</div>
                 <div class="title">WESLEY SANTOS</div>
                 <div class="dates">30/06/2023 - 21:30h</div>
                 <div class="location">Clube dos Comediantes</div>
-                <a href="#" class="buy-button">inscrever-se</a>
+                <a href="#" class="buy-button">Inscrever-se</a>
             </div>
         </div>
 
@@ -74,7 +93,7 @@
         <div class="card">
             <div class="top-bar">Automotivo</div>
             <div class="image-container">
-                <img src="../static/imagens/carros.jpg" alt="Encontro de Carros">
+                <img src="{{ url_for('static', filename='imagens/carros.jpg') }}" alt="Encontro de Carros" />
             </div>
             <div class="content">
                 <div class="evento-subtitulo">ENCONTRO DE</div>
@@ -88,14 +107,14 @@
 
     <footer>
         <div class="social-icons">
-            <a href="#"><img src="../static/imagens/insta.png" alt="Instagram"></a>
-            <a href="#"><img src="../static/imagens/zap.png" alt="WhatsApp"></a>
+            <a href="#"><img src="{{ url_for('static', filename='imagens/insta.png') }}" alt="Instagram" /></a>
+            <a href="#"><img src="{{ url_for('static', filename='imagens/zap.png') }}" alt="WhatsApp" /></a>
         </div>
         <div class="copyright">
             © 2025 CriasEvent - Todos os direitos reservados
         </div>
     </footer>
-    
-    <script src="../static/JavaScript/script.js"></script>
+
+    <script src="{{ url_for('static', filename='JavaScript/script.js') }}"></script>
 </body>
 </html>

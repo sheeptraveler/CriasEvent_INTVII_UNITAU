@@ -4,18 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre - CriasEvent</title>
-     <link rel="stylesheet" href="back-end/static/css/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="logo">CriasEvent</div>
         <nav>
-            <a href="index.html">Home</a>
-            <a href="eventos.html">Eventos</a>
-            <a href="midia.html">Mídia</a>
-            <a href="sobre.html" class="active">Sobre</a>
+            <a href="{{ url_for('index') }}" class="active">Home</a>
+            <a href="{{ url_for('eventos') }}">Eventos</a>
+            <a href="{{ url_for('midia') }}">Mídia</a>
+            <a href="{{ url_for('sobre') }}">Sobre</a>
         </nav>
+        {% if current_user.is_authenticated %}
+            <div class="profile-menu">
+                <span>👤 {{ session['nome_usuario'] }} {{ session['nome_completo'] }} ({{ session['usuario_tipo'] }})</span>
+                <a href="{{ url_for('logout') }}">Sair</a>
+            </div>
+        {% else %}
+            <nav>
+                <a href="{{ url_for('mostrar_formulario_cadastro') }}" class="btn-cadastro">Cadastro</a>
+                <a href="{{ url_for('login') }}" class="btn-cadastro">Login</a>
+            </nav>
+        {% endif %}
+
         <button id="toggle-mode">🌙</button>
     </header>
 
@@ -33,22 +45,22 @@
                     <h2>Nossa Equipe</h2>
                     <div class="membros">
                         <div class="membro">
-                            <img src="imagens/team1.jpg" alt="Caua">
+                            <img src="{{ url_for('static', filename='imagens/team1.jpg') }}" alt="Caua">
                             <h3>Caua dos Santos</h3>
                             <p>10124268</p>
                         </div>
                         <div class="membro">
-                            <img src="imagens/team2.jpg" alt="Miguel">
+                            <img src="{{ url_for('static', filename='imagens/team2.jpg') }}" alt="Miguel">
                             <h3>Miguel de Paulo</h3>
                             <p>10124268</p>
                         </div>
                         <div class="membro">
-                            <img src="imagens/team3.jpg" alt="Mateus">
+                            <img src="{{ url_for('static', filename='imagens/team3.jpg') }}" alt="Mateus">
                             <h3>Mateus Ryu</h3>
                             <p>10124268</p>
                         </div>
                         <div class="membro">
-                            <img src="imagens/team4.jpg" alt="Pedro">
+                            <img src="{{ url_for('static', filename='imagens/team4.jpg') }}" alt="Pedro">
                             <h3>Pedro Nassif</h3>
                             <p>10124268</p>
                         </div>
@@ -60,14 +72,14 @@
 
     <footer>
         <div class="social-icons">
-            <a href="#"><img src="imagens/insta.png" alt="Instagram"></a>
-            <a href="#"><img src="imagens/zap.png" alt="WhatsApp"></a>
+            <a href="#"><img src="{{ url_for('static', filename='imagens/insta.png') }}" alt="Instagram"></a>
+            <a href="#"><img src="{{ url_for('static', filename='imagens/zap.png') }}" alt="WhatsApp"></a>
         </div>
         <div class="copyright">
             © 2025 CriasEvent - Todos os direitos reservados
         </div>
     </footer>
 
-     <script src="back-end/static/JavaScript/script.js"></script>
+    <script src="{{ url_for('static', filename='JavaScript/script.js') }}"></script>
 </body>
 </html>
