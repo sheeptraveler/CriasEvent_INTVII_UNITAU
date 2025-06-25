@@ -826,3 +826,62 @@ textarea {
     background-color: #ff6b6b;
     transform: scale(1.05);
 }
+
+/* Posiciona logo e busca lado a lado no header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Formulário de busca compacto */
+.search-bar-form {
+    display: flex;
+    background-color: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.search-bar-input {
+    border: none;
+    padding: 8px 14px;
+    font-size: 14px;
+    width: 180px;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+}
+
+.search-bar-btn {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 0 25px 25px 0;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.search-bar-btn:hover {
+    background-color: #0512c7;
+}
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .eventos-header {
+        max-width: 90%;
+    }
+
+    .search-input {
+        font-size: 0.95rem;
+        padding: 10px 16px;
+    }
+
+    .search-button {
+        padding: 10px 18px;
+    }
+}

@@ -8,6 +8,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ error_cadastro }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
     <header>
         <div class="logo">CriasEvent</div>
         <input type="text" class="search-bar" placeholder="Pesquisar" />

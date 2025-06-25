@@ -27,6 +27,7 @@ CREATE TABLE `evento` (
   `evento_nome` varchar(45) NOT NULL,
   `evento_organizador_id` int(11) NOT NULL,
   `evento_descricao` text NOT NULL,
+  'evento_imagem' BLOB NOT NULL,
   `evento_data` date NOT NULL,
   `evento_local` varchar(45) NOT NULL,
   `evento_status` enum('Ativo','Cancelado','Removido') NOT NULL,

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Criar Evento - CriasEvent</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="logo">CriasEvent</div>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('eventos') }}">Eventos</a>
+            <a href="{{ url_for('sobre') }}">Sobre</a>
+        </nav>
+        <div class="profile-container">
+            <button onclick="toggleMenu()" class="profile-button">👤 {{ current_user.nome_usuario }}</button>
+            <div id="profileMenu" class="profile-menu">
+                <p><strong>ID:</strong> {{ current_user.id }}</p>
+                <p><strong>Usuário:</strong> {{ current_user.nome_usuario }}</p>
+                <p><strong>Nome:</strong> {{ current_user.nome_completo }}</p>
+                <a href="{{ url_for('logout') }}">Sair</a>
+            </div>
+        </div>
+        <button id="toggle-mode">🌙</button>
+    </header>
+
+    <main class="container">
+        <div class="cadastro-page">
+            <h1>Cadastro de Evento</h1>
+            <p class="subtitle">Preencha os dados para divulgar seu evento</p>
+            
+            <form class="form-cadastro" action="{{ url_for('cadastro_evento') }}" method="POST" enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="evento_nome">Nome do Evento</label>
+                        <input type="text" id="evento_nome" name="evento_nome" required placeholder="Ex: Festival de Música">
+                    </div>
+                </div>
+
+                
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="evento_descricao">Descrição</label>
+                        <textarea id="evento_descricao" name="evento_descricao" rows="5" required placeholder="Descreva detalhes do evento..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="evento_data">Data do Evento</label>
+                        <input type="date" id="evento_data" name="evento_data" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="evento_local">Local do Evento</label>
+                        <input type="text" id="evento_local" name="evento_local" required placeholder="Ex: Teatro Municipal">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="imagem_evento">Imagem Promocional do Evento</label>
+                        <input type="file" id="evento_imagem" name="evento_imagem" accept="image/*" required>
+                    </div>
+                </div>
+
+               
+
+                <button type="submit" class="btn-submit">Cadastrar Evento</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-icons">
+            <a href="#"><img src="{{ url_for('static', filename='imagens/insta.png') }}" alt="Instagram"></a>
+            <a href="#"><img src="{{ url_for('static', filename='imagens/zap.png') }}" alt="WhatsApp"></a>
+        </div>
+        <div class="copyright">
+            © 2025 CriasEvent - Todos os direitos reservados
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='JavaScript/script.js') }}"></script>
+</body>
+</html>

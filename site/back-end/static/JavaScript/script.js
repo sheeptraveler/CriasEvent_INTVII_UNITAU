@@ -148,6 +148,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
 }); // Fim do DOMContentLoaded
 
+// Inscricao 
+document.querySelectorAll('.buy-button').forEach(button => {
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const eventoId = this.getAttribute('data-evento-id');
+
+        fetch('/inscrever', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrf_token') // se estiver usando CSRF no Flask-WTF
+            },
+            body: JSON.stringify({ evento_id: eventoId })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.sucesso) {
+                this.textContent = 'Inscrito!';
+                this.disabled = true;
+            } else {
+                alert('Erro: ' + data.mensagem);
+            }
+        })
+        .catch(err => alert('Erro na requisição: ' + err));
+    });
+});
+
+// Função para pegar cookie CSRF (se usar)
+// Pode ser omitido se não usar CSRF no backend.
+function getCookie(name) {
+    let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    if (match) return match[2];
+}
 
 
 // ===================

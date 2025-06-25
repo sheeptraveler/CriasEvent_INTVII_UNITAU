@@ -1,5 +1,4 @@
 from flask_login import UserMixin
-from database.conexao import conecta_banco
 
 class Usuario(UserMixin):
     def __init__(self, id, nome_completo, nome_usuario, email, tipo):
