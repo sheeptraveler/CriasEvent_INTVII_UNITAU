@@ -3,9 +3,12 @@ from flask_login import LoginManager, login_user, login_required, logout_user, c
 from werkzeug.security import generate_password_hash, check_password_hash
 from database.conexao import conecta_banco
 from models.models import Usuario
-from models.evento import Evento , buscar_evento_por_id
+from models.evento import Evento , buscar_eventos
 from models.participacao import Participacao, enviar_email_participacao
+from models.publicacao import buscar_publicacoes_recentes  # criaremos isso
+from datetime import datetime
 import base64
+
 
 app = Flask(__name__)
 app.secret_key = "Xupeta"  # (Deixe uma chave mais segura depois)
@@ -321,10 +324,87 @@ def inscrever():
     return jsonify({'sucesso': True, 'mensagem': 'Inscrição realizada com sucesso.'})
 
 
-
 @app.route("/midia")
+@login_required
 def midia():
-    return render_template("midia.html")
+    conn = conecta_banco()
+    cursor = conn.cursor(dictionary=True)
+
+    try:
+        # Buscar eventos ativos para o formulário
+        cursor.execute("SELECT evento_id, evento_nome FROM evento WHERE evento_status = 'Ativo'")
+        eventos = cursor.fetchall()
+
+        # Buscar as publicações mais recentes com JOIN
+        cursor.execute("""
+            SELECT p.texto, p.data, p.imagem,
+                   u.nome_usuario,
+                   e.evento_nome
+            FROM publicacoes p
+            JOIN usuario u ON p.usuario_id = u.id_usuario
+            JOIN evento e ON p.evento_id = e.evento_id
+            ORDER BY p.data DESC
+        """)
+        publicacoes = cursor.fetchall()
+
+        # Codificar imagem em base64
+        for p in publicacoes:
+            if p["imagem"]:
+                p["imagem"] = base64.b64encode(p["imagem"]).decode("utf-8")
+
+        return render_template("midia.html", eventos=eventos, publicacoes=publicacoes)
+
+    finally:
+        cursor.close()
+        conn.close()
+
+
+
+@app.route("/publicar", methods=["POST"])
+@login_required
+def publicar():
+    evento_nome = request.form.get("evento_nome")
+    texto = request.form.get("texto")
+    imagem = request.files.get("imagem")
+
+    imagem_bytes = imagem.read() if imagem else None
+
+    conn = conecta_banco()
+    cursor = conn.cursor(dictionary=True)
+
+    try:
+        # Buscar o evento pelo nome para pegar o ID
+        cursor.execute("SELECT evento_id FROM evento WHERE evento_nome = %s", (evento_nome,))
+        evento = cursor.fetchone()
+
+        if not evento:
+            return jsonify({"sucesso": False, "mensagem": "Evento não encontrado."})
+
+        evento_id = evento["evento_id"]  # corrigido aqui
+
+        # Inserir a publicação com o id do usuário logado
+        cursor.execute("""
+            INSERT INTO publicacoes (usuario_id, evento_id, texto, data, imagem)
+            VALUES (%s, %s, %s, %s, %s)
+        """, (
+            current_user.id,  # id do usuário logado
+            evento_id,
+            texto,
+            datetime.now(),
+            imagem_bytes
+        ))
+        conn.commit()
+
+        return redirect(url_for("midia"))
+
+    except Exception as e:
+        print("Erro:", e)
+        return jsonify({"sucesso": False, "mensagem": "Erro ao publicar."})
+    finally:
+        cursor.close()
+        conn.close()
+
+
 
 @app.route("/sobre")
 def sobre():

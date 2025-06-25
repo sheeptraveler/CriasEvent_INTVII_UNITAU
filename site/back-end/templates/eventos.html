@@ -48,6 +48,14 @@
     <main class="container">
         <section class="eventos-header">
             <h1>Próximos Eventos</h1>
+
+
+         {% if current_user.is_authenticated and current_user.tipo == 'organizador' %}
+            <div style="text-align: right; margin: 10px 0;">
+                <a href="{{ url_for('cadastro_evento') }}" class="btn-cadastro" style="padding: 8px 16px; background-color: var(--cor-primaria); color: white; border-radius: 8px; text-decoration: none;">+ Criar Evento</a>
+            </div>
+        {% endif %}
+   
         
         <section class="eventos-grid">
             {% for evento in eventos %}

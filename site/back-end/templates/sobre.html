@@ -11,16 +11,21 @@
     <header>
         <div class="logo">CriasEvent</div>
         <nav>
-            <a href="{{ url_for('index') }}" class="active">Home</a>
+            <a href="{{ url_for('index') }}">Home</a> 
             <a href="{{ url_for('eventos') }}">Eventos</a>
             <a href="{{ url_for('midia') }}">Mídia</a>
-            <a href="{{ url_for('sobre') }}">Sobre</a>
+            <a href="{{ url_for('sobre') }}"class="active">Sobre</a>
         </nav>
         {% if current_user.is_authenticated %}
-            <div class="profile-menu">
-                <span>👤 {{ session['nome_usuario'] }} {{ session['nome_completo'] }} ({{ session['usuario_tipo'] }})</span>
+        <div class="profile-container">
+            <button onclick="toggleMenu()" class="profile-button">👤 {{ current_user.nome_usuario }}</button>
+            <div id="profileMenu" class="profile-menu">
+                <p><strong>ID de Usuário:</strong> {{ current_user.id }}</p>
+                <p><strong>Usuário:</strong> {{ current_user.nome_usuario }}</p>
+                <p><strong>Nome:</strong> {{ current_user.nome_completo }}</p>
                 <a href="{{ url_for('logout') }}">Sair</a>
             </div>
+        </div>
         {% else %}
             <nav>
                 <a href="{{ url_for('mostrar_formulario_cadastro') }}" class="btn-cadastro">Cadastro</a>
@@ -45,25 +50,22 @@
                     <h2>Nossa Equipe</h2>
                     <div class="membros">
                         <div class="membro">
-                            <img src="{{ url_for('static', filename='imagens/team1.jpg') }}" alt="Caua">
+                            <img src="{{ url_for('static', filename='imagens/25ed372b-45a0-4dea-bec0-969759292c98.jpg') }}" alt="Caua">
                             <h3>Caua dos Santos</h3>
-                            <p>10124268</p>
                         </div>
                         <div class="membro">
-                            <img src="{{ url_for('static', filename='imagens/team2.jpg') }}" alt="Miguel">
+                            <img src="{{ url_for('static', filename='imagens/8411d04d-a21b-449d-9fa4-f8c08cdd7196.jpg') }}" alt="Miguel">
+                            <h3>Mateus Ruy</h3>
+                        </div>
+                        <div class="membro">
+                            <img src="{{ url_for('static', filename='imagens/bf8b4cff-f411-4654-bdb5-30cdd05d0eee.jpg') }}" alt="Mateus">
                             <h3>Miguel de Paulo</h3>
-                            <p>10124268</p>
                         </div>
                         <div class="membro">
-                            <img src="{{ url_for('static', filename='imagens/team3.jpg') }}" alt="Mateus">
-                            <h3>Mateus Ryu</h3>
-                            <p>10124268</p>
-                        </div>
-                        <div class="membro">
-                            <img src="{{ url_for('static', filename='imagens/team4.jpg') }}" alt="Pedro">
+                            <img src="{{ url_for('static', filename='imagens/f325b8b7-5072-4651-b955-6fc2bd75fac1.jpg') }}" alt="Pedro">
                             <h3>Pedro Nassif</h3>
-                            <p>10124268</p>
                         </div>
+
                     </div>
                 </div>
             </div>

@@ -176,6 +176,11 @@ document.querySelectorAll('.buy-button').forEach(button => {
     });
 });
 
+function abrirPainel() {
+    document.getElementById('painelPublicacao').classList.toggle('ativo');
+}
+
+
 // Função para pegar cookie CSRF (se usar)
 // Pode ser omitido se não usar CSRF no backend.
 function getCookie(name) {
@@ -183,6 +188,30 @@ function getCookie(name) {
     if (match) return match[2];
 }
 
+document.getElementById('abrirPainelBtn').addEventListener('click', () => {
+    document.getElementById('painelPublicacao').classList.add('ativo');
+});
+
+document.getElementById('fecharPainelBtn').addEventListener('click', () => {
+    document.getElementById('painelPublicacao').classList.remove('ativo');
+});
+
+document.getElementById('formPublicacao').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const form = new FormData(this);
+    
+    const response = await fetch('/publicar', {
+        method: 'POST',
+        body: form
+    });
+
+    const resultado = await response.json();
+
+    alert(resultado.mensagem || 'Publicado!');
+    document.getElementById('painelPublicacao').classList.remove('ativo');
+    window.location.reload();  // Recarrega a página pra mostrar a nova publicação
+});
 
 // ===================
 // MENU DO PERFIL (Header)

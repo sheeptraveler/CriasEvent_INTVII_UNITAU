@@ -23,38 +23,19 @@ class Evento:
         conn.commit()
         conn.close()
 
-def buscar_evento_por_id(evento_id):
+def buscar_eventos():
     conn = conecta_banco()
     cursor = conn.cursor(dictionary=True)
     try:
         cursor.execute("""
-            SELECT e.evento_id, e.evento_nome, e.evento_organizador_id, e.evento_descricao,
-                   e.evento_data, e.evento_local, e.evento_status, e.evento_imagem,
-                   u.nome_usuario AS organizador_nome
-            FROM evento e
-            JOIN usuario u ON e.evento_organizador_id = u.id_usuario
-            WHERE e.evento_id = %s
-        """, (evento_id,))
-        linha = cursor.fetchone()
-        if not linha:
-            return None
-
-        imagem_base64 = (
-            base64.b64encode(linha['evento_imagem']).decode('utf-8')
-            if linha['evento_imagem'] else None
-        )
-
-        return Evento(
-            id=linha['evento_id'],
-            nome=linha['evento_nome'],
-            organizador_id=linha['organizador_nome'],
-            descricao=linha['evento_descricao'],
-            data=linha['evento_data'],
-            local=linha['evento_local'],
-            status=linha['evento_status'],
-            imagem=imagem_base64
-        )
+            SELECT evento_id, evento_nome
+            FROM evento
+            WHERE evento_status = 'ativo'
+            ORDER BY evento_data DESC
+        """)
+        return cursor.fetchall()
     finally:
         cursor.close()
         conn.close()
+
 

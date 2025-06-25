@@ -11,16 +11,21 @@
     <header>
         <div class="logo">CriasEvent</div>
         <nav>
-            <a href="{{ url_for('index') }}" class="active">Home</a>
+            <a href="{{ url_for('index') }}">Home</a>
             <a href="{{ url_for('eventos') }}">Eventos</a>
-            <a href="{{ url_for('midia') }}">Mídia</a>
+            <a href="{{ url_for('midia') }}" class="active">Mídia</a>
             <a href="{{ url_for('sobre') }}">Sobre</a>
         </nav>
         {% if current_user.is_authenticated %}
-            <div class="profile-menu">
-                <span>👤 {{ session['nome_usuario'] }} {{ session['nome_completo'] }} ({{ session['usuario_tipo'] }})</span>
+        <div class="profile-container">
+            <button onclick="toggleMenu()" class="profile-button">👤 {{ current_user.nome_usuario }}</button>
+            <div id="profileMenu" class="profile-menu">
+                <p><strong>ID de Usuário:</strong> {{ current_user.id }}</p>
+                <p><strong>Usuário:</strong> {{ current_user.nome_usuario }}</p>
+                <p><strong>Nome:</strong> {{ current_user.nome_completo }}</p>
                 <a href="{{ url_for('logout') }}">Sair</a>
             </div>
+        </div>
         {% else %}
             <nav>
                 <a href="{{ url_for('mostrar_formulario_cadastro') }}" class="btn-cadastro">Cadastro</a>
@@ -32,32 +37,48 @@
     </header>
 
     <main class="container">
-        <section class="midia-page">
-            <h1>Compartilhe suas experiências</h1>
-            <p class="subtitle">Mostre para todos como foi seu evento favorito</p>
+        <h2>Publicações Recentes</h2>
+        <div style="display: flex; justify-content: flex-end; margin-top: 20px;">
+            <button id="abrirPainelBtnDireito" onclick="abrirPainel()">+ Nova Publicação</button>
+        </div>
+
+        
+        <div id="painelPublicacao" class="painel">
             
-            <form class="form-midia">
-                <div class="form-group">
-                    <label for="foto">Selecione uma foto</label>
-                    <input type="file" id="foto" accept="image/*" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="comentario">Comentário</label>
-                    <textarea id="comentario" required placeholder="Conte sobre sua experiência..."></textarea>
-                </div>
-                
-                <button type="submit" class="btn-submit">Publicar</button>
+            <h3>Nova Publicação</h3>
+            <form method="POST"  action="{{ url_for('publicar') }}" enctype="multipart/form-data">
+                <select name="evento_nome" required>
+                    <option value="">Selecione o Evento</option>
+                    {% for evento in eventos %}
+                        <option value="{{ evento.evento_nome }}">{{ evento.evento_nome }}</option>
+                    {% endfor %}
+                </select>
+                <input type="text" name="texto" placeholder="Digite um comentário..." required>
+                <input type="file" name="imagem">
+                <button type="submit">Publicar</button>
             </form>
-            
-            <div class="galeria">
-                <h2>Galeria de Fotos</h2>
-                <div class="galeria-grid">
-                    <!-- As fotos serão adicionadas dinamicamente via JavaScript -->
+        </div>
+
+        
+        
+        <div class="publicacoes">
+            {% for publi in publicacoes %}
+                <div class="publi-card">
+                    <p class="publi-usuario">
+                        <strong>{{ publi.nome_usuario }}</strong> comentou no evento <strong>{{ publi.nome_evento }}</strong>:
+                    </p>
+                    <p class="publi-texto">{{ publi.texto }}</p>
+                    <p class="publi-data">{{ publi.data }}</p>
+                    {% if publi.imagem %}
+                        <img src="data:image/jpeg;base64,{{ publi.imagem }}" alt="Imagem da publicação" class="publi-img">
+                    {% endif %}
                 </div>
-            </div>
-        </section>
+            {% endfor %}
+        </div>
+
+
     </main>
+
 
     <footer>
         <div class="social-icons">
